@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 USER STORY:
-As a [role] I can [capability] so that [received benefit].
+As a **role** I can **capability** so that **received benefit**.
 
 Example:
 As a [warehouse employee], I can [select paper size for print], so that the [printed label size, matches parcel size].
