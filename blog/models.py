@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# Model used from "I think therefore I blog" walkthrough.
 class BlogPost(models.Model):
     """
     Database model for submitting a blog post
@@ -38,3 +39,31 @@ class BlogPost(models.Model):
         To return total number of post likes
         """
         return self.likes.count()
+
+
+# Model used from "I think therefore I blog" walkthrough.
+class BlogComments(models.Model):
+    """
+    Database model for creating a comment
+    on a blog post
+    """
+    post = models.ForeignKey(
+        BlogPost, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        """
+        Order comments in ascending order
+        """
+        ordering = ['created_on']
+
+    def __str__(self):
+        """
+        Display the comment as the comment text,
+        and comment author name
+        """
+        return f"Comment {self.body} by {self.name}"
