@@ -232,6 +232,7 @@ python3 manage.py migrate
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the env.py file
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file
 - added Heroku to the ALLOWED_HOSTS in settings.py
+- created the Procfile
 
 - The live link for "print(STATEMENTS)" can be found [HERE]()
 
