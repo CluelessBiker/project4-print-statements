@@ -3,7 +3,7 @@ Print statements is a safe haven that brings artists & consumers together in har
 
 ![Site view across devices]()
 
-The live link for “print(STATEMENTS)” can be found [HERE]()
+The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
 
 ## Table of Contents
 + [UX](#ux "UX")
@@ -37,7 +37,7 @@ The live link for “print(STATEMENTS)” can be found [HERE]()
 ## UX
 
 ### Site Purpose:
-The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”]() Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the number of limited edition copies they would like to order. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
+The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”](https://print-statements.herokuapp.com/) Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the number of limited edition copies they would like to order. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
 
 ### Site Goal:
 To build a platform that allows artists to easily share their work and passions with their fans, and art loves who have yet to discover their talents. As well as to bring an engaging experience to artists and consumers alike. By having a display of artwork from a range of individuals, art-lovers will be able to easily peruse through pieces that engage them in a way that only art can.
@@ -206,22 +206,22 @@ All photography for the fictional "artists" was supplied by me.
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
 - Creating the requirements.txt file with the following command:
-'''
+```
 pip3 freeze --local > requirements.txt
-'''
+```
 - a django project was created using:
-'''
+```
 django-admin startproject printstatements .
-'''
+```
 - the blog app was then created with:
-'''
+```
 python3 manage.py startapp blog
-'''
+```
 - which was then added to the settings.py file within our project directory.
 - the changes were then migrated using:
-'''
+```
 python3 manage.py migrate
-'''
+```
 - navigated to [Heroku](www.heroku.com) & created a new app called print-statements.
 - added the Heroku Postgres database to the Resources tab.
 - navigated to the Settings Tab, to add the following key/value pairs to the configvars:
@@ -233,8 +233,11 @@ python3 manage.py migrate
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file
 - added Heroku to the ALLOWED_HOSTS in settings.py
 - created the Procfile
+- pushed the project to Github
+- connected my github account to Heroku through the Deploy tab
+- and connected my github project repository, and then clicked on the "Deploy" button
 
-- The live link for "print(STATEMENTS)" can be found [HERE]()
+- The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
 
 ## Installed Packages:
 - 'django<4' gunicorn
