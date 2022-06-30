@@ -203,6 +203,12 @@ All photography for the fictional "artists" was supplied by me.
 - Django
 - Bootstrap
 
+### Installed Packages:
+- 'django<4' gunicorn
+- dj_database_url psycopg2
+- dj3-cloudinary-storage
+- django-summernote [(link)](https://summernote.org/)
+
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
 - Creating the requirements.txt file with the following command:
@@ -238,11 +244,6 @@ python3 manage.py migrate
 - and connected my github project repository, and then clicked on the "Deploy" button
 
 - The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
-
-## Installed Packages:
-- 'django<4' gunicorn
-- dj_database_url psycopg2
-- dj3-cloudinary-storage
 
 ## Credits
 
