@@ -1,108 +1,288 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# print(STATEMENTS)
+Print statements is a safe haven that brings artists & consumers together in harmony. It allows artists to take control of the distribution of their work, and share their passions with the general public. As well as bringing an interactive, engaging platform for the public to find pieces from their favourite artists, as well as allowing them to discover new & upcoming figures within the art world.
 
-Welcome Lauren-Nicole,
+![Site view across devices]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The live link for “print(STATEMENTS)” can be found [HERE]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
++ [UX](#ux "UX")
+  + [Site Purpose](#site-purpose "Site Purpose")
+  + [Site Goal](#site-goal "Site Goal")
+  + [Audience](#audience "Audience")
+  + [Communication](#communication "Communication")
+  + [Current User Goals](#current-user-goals "Current User Goals")
+  + [New User Goals](#new-user-goals "New User Goals")
++ [User Stories](#user-stories "User Stories")
+  + [Admin stories](#admin-stories "Admin stories")
+  + [Artist stories](#artist-stories "Artist stories")
+  + [Visitor stories](#visitor-stories "Visitor stories")
++ [Design](#design "Design")
+  + [Colour Scheme](#colour-scheme "Colour Scheme")
+  + [Typography](#typography "Typography")
+  + [Imagery](#imagery "Imagery")
++ [Features](#features "Features")
+  + [Existing Features](#existing-features "Existing Features")
++ [Testing](#testing "Testing")
+  + [Validator Testing](#validator-testing "Validator Testing")
+  + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
++ [Technologies Used](#technologies-used "Technologies Used")
+  + [Main Languages Used](#main-languages-used "Main Languages Used")
+  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
++ [Deployment](#deployment "Deployment")
++ [Credits](#credits "Credits")
+  + [Content](#content "Content")
+  + [Media](#media "Media")
 
-## Gitpod Reminders
+## UX
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Site Purpose:
+The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”]() Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the number of limited edition copies they would like to order. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
 
-`python3 -m http.server`
+### Site Goal:
+To build a platform that allows artists to easily share their work and passions with their fans, and art loves who have yet to discover their talents. As well as to bring an engaging experience to artists and consumers alike. By having a display of artwork from a range of individuals, art-lovers will be able to easily peruse through pieces that engage them in a way that only art can.
 
-A blue button should appear to click: _Make Public_,
+### Audience:
+For everyone with a thirst for beauty in their lives. For the experiences art collectors who know what they are looking for, as well as those just discovering the art world with fresh new eyes. The ideal user age is between 20-50 years of age.
 
-Another blue button should appear to click: _Open Browser_.
+### Communication:
+With a clean, easy to follow layout, the user - both artist and consumer alike - are guided through the features of the website with an ease of navigation.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Current User Goals:
+For Artists to easily be able to supply their work to the art world and be discovered by new & old collectors. For Collectors to not only find works by the artists they admire, but to also discover new artists along the way.
 
-A blue button should appear to click: _Make Public_,
+### New User Goals:
+To become instantly engaged with the design of the site, and feel intrigued to play along.
 
-Another blue button should appear to click: _Open Browser_.
+### Future Goals:
+To make the works purchasable through the platform directly.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User Stories
+Not all stories have been implemented. Some have been left for future implementations as the site grows and expands.
 
-To log into the Heroku toolbelt CLI:
+### Admin stories:
+#### As an admin:
+- I can **submit new blog posts** so that **I can inform site visitors & artists of new events, artists, and more**.
+-- Story points:
+- I can **moderate blog comments** so that **the feedback provided is appropriate**.
+-- Story points:
+- I can **create a log in / sign up page** so that **artists and visitors can sign up to the site**.
+-- Story points:
+- I can **** so that ****.
+-- Story points:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Artist stories:
+#### As an artist:
+- I can **create a user profile** so that **I can be found & viewed on the site**.
+-- Story points:
+- I can **upload artwork** so that **I can share it with art enthusiasts**.
+-- Story points:
+- I can **select a medium, and print size** so that **I can have the work printed**.
+-- Story points:
+- I can **choose how many prints I would like** so that **my work is sold as a limited edition run**.
+-- Story points:
+- I can **set a price** so that **I can sell my work**.
+-- Story points:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Visitor stories:
+#### As a visitor:
+- I can **visit the blog** so that **I can see what is new**.
+-- Story points:
+- I can **comment on blog posts** so that **I can give my feedback**.
+-- Story points:
+- I can **like blog posts** so that **I can easily share my enthusiasm**.
+-- Story points:
+- I can **peruse the gallery** so that **I can discover new artists, and new artworks by artists I already know**.
+-- Story points:
+- I can **follow artists** so that **I can be updated when new work is released**.
+-- Story points:
+- I can **like an artists** so that **I can show my appreciation**.
+-- Story points:
 
-------
+## Design
 
-## Release History
+### Wireframes:
+![Desktop wireframe]()
+![Smartphone wireframe]()
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Colour Scheme:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Colour Palette]()
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Typography:
+All fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
+1. 
+2. 
+3. 
+4. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Imagery:
+All photography for the fictional "artists" was supplied by me.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Existing Features:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Landing Page:
+![]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Navigation Bar:
+![]()
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### About Page:
+![]()
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### Gallery:
+![]()
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Blog:
+![]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Log in & Sign up:
+![]()
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Online Shop:
+![]()
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Social Links:
+![]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Features Left to Implement
+- Home page
+- About Page
+- Sign-up/Log-in page
+- Blog Page
+- Artists gallery
+- Online shop
 
-------
+## Testing
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Validator Testing
+- html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![W3C validator message]()
 
-**How will this affect me?**
+- CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Jigsaw validator message]()
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- JS files pass through [JSHint](https://jshint.com/) with no issues found.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![JSHint overview]()
 
-**So….?**
+- page has an excellent Accessibility rating in Lighthouse
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Accessibility score]()
 
-**Can I opt out?**
+- Python files passed through [PEP8 Online](http://pep8online.com/) with no issues found.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Tested the site opens in Brave, Chrome & Safari without issues.
+- All links open to external pages as intended.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Unfixed Bugs
 
-**Anything more?**
+## Technologies Used
+### Main Languages Used
+- HTML5
+- CSS3
+- Javascript
+- Python
+- Django
+- SQL - Postgres
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Frameworks, Libraries & Programs Used
+- Google Fonts - for the font families: 
+- Font Awesome - to add icons to the social links in the footer element.
+- GitPod - to create my html files & styling sheet before pushing the project to Github.
+- GitHub - to store my repository for submission.
+- Balsamiq - were used to create mockups of the project prior to starting.
+- Am I Responsive? - to ensure the project looked good across all devices.
+- Favicon - to provide the code & image for the icon in the tab bar.
+- Adobe Photoshop - for photo editing
+- Django
+- Bootstrap
 
----
+## Deployment
+The site was deployed to Heroku. The steps to deploy are as follows:
+- Creating the requirements.txt file with the following command:
+'''
+pip3 freeze --local > requirements.txt
+'''
+- a django project was created using:
+'''
+django-admin startproject printstatements .
+'''
+- the blog app was then created with:
+'''
+python3 manage.py startapp blog
+'''
+- which was then added to the settings.py file within our project directory.
+- the changes were then migrated using:
+'''
+python3 manage.py migrate
+'''
+- navigated to [Heroku](www.heroku.com) & created a new app called print-statements.
+- added the Heroku Postgres database to the Resources tab.
+- navigated to the Settings Tab, to add the following key/value pairs to the configvars:
+1. key: SECRET_KEY | value: randomkey
+2. key: PORT | value: 8000
+3. key: CLOUDINARY_URL | value: API environment variable
+4. key:  | value: 
+- added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the env.py file
+- added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file
+- added Heroku to the ALLOWED_HOSTS in settings.py
 
-Happy coding!
+- The live link for "print(STATEMENTS)" can be found [HERE]()
+
+## Installed Packages:
+- 'django<4' gunicorn
+- dj_database_url psycopg2
+- dj3-cloudinary-storage
+
+## Credits
+
+### Content
+Support was provided by my fellow student & friend [Mats Simonsson](https://github.com/Pelikantapeten).
+
+Also a huge thank you to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch).
+
+The initial setup and deployment of this project was done by following the “I think therefore I blog” walkthrough.
+
+In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step.
+
+
+### Media
+- All photography displayed in the gallery was created by me.
+
+##### Landing page image:
+- Green photo frame downloaded from Pexels, Photo by [Barbara Wyrowińska:](https://www.pexels.com/photo/green-photo-frame-2961734/)
+- Photo wall downloaded from Pexels, Photo by [Tom Balabaud:](https://www.pexels.com/photo/framed-photo-lot-1579708/)
+- dark green gallery wall from Pexels, Photo by [¶Project Atlas:](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
+
+DATA SETS:
+Sign-up - visitor:
+- first name
+- last name
+- phone number
+- email
+
+Sign-up - artist:
+- first name
+- last name
+- phone number
+- email
+- artist name
+- country
+- description
+- street name
+
+Art submission:
+- print height
+- print width
+- paper selection
+- piece name
+- number of copies
+- number of copies remaining
+- file
+- price
