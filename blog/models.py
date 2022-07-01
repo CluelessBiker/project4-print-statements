@@ -1,3 +1,7 @@
+"""
+Database models for the blog app
+& comments section.
+"""
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -42,7 +46,7 @@ class BlogPost(models.Model):
 
 
 # Model used from "I think therefore I blog" walkthrough.
-class BlogComments(models.Model):
+class BlogComment(models.Model):
     """
     Database model for creating a comment
     on a blog post
