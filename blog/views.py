@@ -15,3 +15,10 @@ class BlogPage(generic.ListView):
     queryset = BlogPost.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
     paginate_by = 5
+
+
+class HomePage(generic.ListView):
+    """
+    View for home page.
+    """
+    template_name = 'index.html'
