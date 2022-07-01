@@ -156,6 +156,9 @@ All photography for the fictional "artists" was supplied by me.
 - Online shop
 
 ## Testing
+I was unable to load the home (index.html) page using the generic views. This was resolved with trial & error, and I realised that by changing the class to a function in views.py, as well as simply rendering the page, along with removing the ```.as_view()``` from the url path resolved the issue.
+
+
 
 
 ### Validator Testing

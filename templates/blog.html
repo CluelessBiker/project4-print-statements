@@ -2,4 +2,42 @@
 
 {% block content %}
 
+<div class="row">
+    {% for post in posts %}
+    <div class="col-sm-12 col-md-3">
+        <!-- Formatting taken from "I think therefore I blog" walkthrough. -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="image-container">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img class="card-img-top"
+                        src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600">
+                    {% else %}
+                    <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                    {% endif %}
+                    <div class="image-flash">
+                        <p class="author">Author: {{ post.author }}</p>
+                    </div>
+                </div>
+                <a href="#" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                </a>
+                <hr />
+                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                    {{ post.number_of_likes }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <h2>test</h2>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <h2>test</h2>
+    </div>
+</div>
+
 {% endblock %}
