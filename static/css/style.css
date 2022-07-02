@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,900;1,100;1,200&family=Permanent+Marker&family=Play:wght@400;700&family=Shadows+Into+Light+Two&display=swap');
+
+h1, h2, h3 {
+    /* color: #25292C; */
+    color: #1A313C;
+}
+
+/* Site logo & tagline */
+.logo-tagline {
+    text-align: center;
+    height: 150px;
+}
+
+h1 {
+    /* font-family: 'Permanent Marker', cursive; */
+    /* font-family: 'Play', sans-serif;
+    font-weight: 700; */
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 4vw;
+}
+
+#statement-green {
+    color: #EFB542;
+}
+
+h3 {
+    font-family: 'Shadows Into Light Two', cursive;
+    text-transform: uppercase;
+    font-size: 2vw;
+}
+
+.logo-link:hover{
+    text-decoration: none;
+    
+}
+
+/* Navigation bar */
+#nav {
+    text-align: center;
+    height: 20px;
+}
+
+.nav-bar {
+    color: #1A313C;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+}
+
+.nav-bar:hover{
+    text-decoration: none;
+    color: #EFB542;
+}
+
+/* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */
+@media screen and (max-width:950px){
+    h1 {
+        font-family: 'Kanit', sans-serif;
+        font-weight: 900;
+        letter-spacing: 3px;
+        font-size: 2em;
+    }
+    
+    h3 {
+        font-size: 1em;
+    }
+    
+    /* Navigation bar */
+    #nav {
+        height: 20px;
+    }
+    
+    .nav-bar {
+        font-size: 1em;
+    }
+
+}
