@@ -257,14 +257,17 @@ The initial setup and deployment of this project was done by following the “I 
 
 In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
 
+With the assistance of Sean at Tutor Support, I was able to add an if statement to my blog page that signled out the most recent blog post. They were very patient with me as I tried to be coherent and explain why I was stuck.
+
 
 ### Media
 - All photography displayed in the gallery was created by me.
 
 ##### Landing page image:
-- Green photo frame downloaded from Pexels, Photo by [Barbara Wyrowińska:](https://www.pexels.com/photo/green-photo-frame-2961734/)
-- Photo wall downloaded from Pexels, Photo by [Tom Balabaud:](https://www.pexels.com/photo/framed-photo-lot-1579708/)
-- dark green gallery wall from Pexels, Photo by [¶Project Atlas:](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
+- Green photo frame downloaded from Pexels, Photo by [Barbara Wyrowińska](https://www.pexels.com/photo/green-photo-frame-2961734/)
+- Photo wall downloaded from Pexels, Photo by [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
+- dark green gallery wall from Pexels, Photo by [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
+- Default blog post image, Photo from Pexels, by [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
 
 DATA SETS:
 Sign-up - visitor:
