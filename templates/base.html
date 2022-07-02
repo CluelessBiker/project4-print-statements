@@ -26,7 +26,7 @@
     <header>
         <!-- Company logo & tagline -->
         <div class="logo-tagline">
-            <a href="#" class="logo-link">
+            <a href="{% url 'home' %}" class="logo-link">
                 <h1>print(<span id="statement-green">STATEMENTS</span>)</h1>
                 <h3>What does yours say?</h3>
             </a>
@@ -38,7 +38,7 @@
             <div class="col">
                 <ul id="nav" class="list-inline">
                     <li class="list-inline-item col-md-2">
-                        <a href="#" class="nav-bar">Home</a>
+                        <a href="{% url 'home' %}" class="nav-bar">Home</a>
                     </li>
                     <li class="list-inline-item col-md-2">
                         <a href="#" class="nav-bar">About</a>
@@ -47,7 +47,7 @@
                         <a href="#" class="nav-bar">Prints</a>
                     </li>
                     <li class="list-inline-item col-md-2">
-                        <a href="#" class="nav-bar">Blog</a>
+                        <a href="{% url 'blog' %}" class="nav-bar">Blog</a>
                     </li>
                     <li class="list-inline-item col-md-2">
                         <a href="#" class="nav-bar">Log in / Sign up</a>
