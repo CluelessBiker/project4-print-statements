@@ -255,7 +255,7 @@ Also a huge thank you to my mentor, [Martina Terlevic](https://github.com/SephTh
 
 The initial setup and deployment of this project was done by following the “I think therefore I blog” walkthrough.
 
-In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step.
+In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
 
 
 ### Media
