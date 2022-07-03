@@ -158,6 +158,8 @@ All photography for the fictional "artists" was supplied by me.
 ## Testing
 I was unable to load the home (index.html) page using the generic views. This was resolved with trial & error, and I realised that by changing the class to a function in views.py, as well as simply rendering the page, along with removing the ```.as_view()``` from the url path resolved the issue.
 
+The css styles were not loading into my blog page, or my blog post page. Upon reviewing this [Django tutorial](https://docs.djangoproject.com/en/4.0/intro/tutorial06/), I discovered that I needed to update my href link to ```{% static 'css/style.css' %}```. This corrected the issue instantly
+
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
