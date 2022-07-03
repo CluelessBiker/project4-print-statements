@@ -54,9 +54,12 @@ h3 {
     color: #EFB542;
 }
 
-.test-test {
-    text-align: right;
-    background-color: black;
+/* Blog: all posts */
+.main-post {
+    margin: 0 auto;
+}
+
+.remaining-posts {
 }
 
 /* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */

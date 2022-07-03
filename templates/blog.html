@@ -5,7 +5,7 @@
     {% for post in blogpost_list %}
 
     {% if forloop.counter0 == 0 %}
-        <div class="col-sm-12 col-md-6 test-test">
+        <div class="col-sm-12 col-md-6 main-post">
             <!-- Formatting taken from "I think therefore I blog" walkthrough. -->
             <div class="card mb-4">
                 <div class="card-body">
@@ -32,7 +32,7 @@
         </div>
 
     {% else %}
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3 remaining-posts">
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="image-container">
