@@ -21,6 +21,10 @@ h1 {
     font-size: 4vw;
 }
 
+p {
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
 #statement-green {
     color: #EFB542;
 }
@@ -59,7 +63,27 @@ h3 {
     margin: 0 auto;
 }
 
-.remaining-posts {
+.social-icons {
+    text-align: center;
+    font-size: 150%;
+}
+
+#social li {
+    text-align: center;
+}
+
+#social a{
+    color: #1A313C;
+}
+
+#social a:hover {
+    color: #EFB542;
+}
+
+.footer-text {
+    margin: 0 auto;
+    text-align: center;
+
 }
 
 /* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */
