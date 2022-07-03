@@ -43,7 +43,7 @@ h3 {
 /* Navigation bar */
 #nav {
     text-align: center;
-    height: 20px;
+    height: 15px;
 }
 
 .nav-bar {
@@ -57,6 +57,23 @@ h3 {
     text-decoration: none;
     color: #EFB542;
 }
+
+/* Hero image */
+.hero-page {
+    width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    background: url(../images/gallery-wall.jpg) no-repeat;
+    background-size: 100%;
+    background-position-x: 0px;
+    background-position-y: -717px;
+    contain: content;
+}
+
+/* .hero-image {
+    width: 100%;
+    overflow: none;
+} */
 
 /* Blog: all posts */
 .main-post {
