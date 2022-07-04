@@ -86,7 +86,7 @@ Will replace with my own formatting later. -->
                 <h3>Add your two cents:</h3>
                 <form method="POST" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
-                    {% crfs_token %}
+                    {% csrf_token %}
                     <button type="submit">Submit</button>
                 </form>
                 {% endif %}
