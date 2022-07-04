@@ -211,6 +211,7 @@ The css styles were not loading into my blog page, or my blog post page. Upon re
 - dj_database_url psycopg2
 - dj3-cloudinary-storage
 - django-summernote [(link)](https://summernote.org/)
+- django-allauth [(link)](https://django-allauth.readthedocs.io/en/latest/)
 
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
