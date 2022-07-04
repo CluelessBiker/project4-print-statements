@@ -103,6 +103,13 @@ h3 {
 
 }
 
+/* @media screen and (min-width:1600px){}
+
+@media screen and (min-width:1500px){} */
+
+/* Desktops, large screens. */
+/* @media screen and (max-width:1200px){} */
+
 /* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */
 @media screen and (max-width:950px){
     h1 {
@@ -125,4 +132,26 @@ h3 {
         font-size: 1em;
     }
 
+}
+
+/* iPads, Tablets. */
+/* @media screen and (max-width:768px){} */
+
+/* Mobile devices. */
+@media screen and (max-width:480px){
+
+    /* Header */
+    .logo-tagline {
+        height: 53px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    /* Hero image */
+    .hero-page {
+        height: 307px;
+        background-position-y: -25px;
+    }
 }
