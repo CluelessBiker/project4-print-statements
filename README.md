@@ -214,6 +214,7 @@ After installing ```django-allauth``` I was unable to migrate my changes. Each t
 - dj3-cloudinary-storage
 - django-summernote [(link)](https://summernote.org/)
 - django-allauth [(link)](https://django-allauth.readthedocs.io/en/latest/)
+- django-crispy-forms[(link)](https://django-crispy-forms.readthedocs.io/en/latest/index.html)
 
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
