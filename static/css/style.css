@@ -135,7 +135,12 @@ h3 {
 }
 
 /* iPads, Tablets. */
-/* @media screen and (max-width:768px){} */
+@media screen and (max-width:768px){
+
+    .display-mobile {
+        display: none;
+    }
+}
 
 /* Mobile devices. */
 @media screen and (max-width:480px){
@@ -147,6 +152,19 @@ h3 {
 
     h1 {
         font-size: 1.7em;
+    }
+
+    /* Nav bar */
+    .vanish-mobile {
+        display: none;
+    }
+
+    .display-mobile {
+        display: block;
+    }
+
+    .center-burger-tag {
+        justify-content: center;
     }
 
     /* Hero image */

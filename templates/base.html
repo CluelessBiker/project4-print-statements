@@ -28,13 +28,17 @@
         <div class="logo-tagline">
             <a href="{% url 'home' %}" class="logo-link">
                 <h1>print(<span id="statement-green">STATEMENTS</span>)</h1>
-                <h3>What does yours say?</h3>
             </a>
+            <div class="row center-burger-tag">
+                <div class="col-1 display-mobile"><i class="fa-solid fa-bars"></i></div>
+                <div class="col-7"><h3>What does yours say?</h3></div>
+                
+            </div>
         </div>
         <hr>
 
         <!-- Navigation bar -->
-        <div class="row">
+        <div class="row vanish-mobile">
             <div class="col">
                 <ul id="nav" class="list-inline">
                     <li class="list-inline-item col-xs-6 col-md-2">
@@ -69,7 +73,7 @@
                 </ul>
             </div>
         </div>
-        <hr>
+        <hr class="vanish-mobile">
     </header>
 
     <body>
