@@ -271,6 +271,8 @@ With the assistance of Sean at Tutor Support, I was able to add an if statement 
 
 When encountering an error message that I could not decipher, let alone solve, I reached out to Tutor support, and Ger instantly pointed me in the right direction. This is my third encounter with this person over the course of my all my projects, and each time, they have been an invaluable help. 
 
+The following Article on ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html), provided some insight into how to create different types of user groups.
+
 
 ### Media
 - All photography displayed in the gallery was created by me.

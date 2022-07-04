@@ -1,8 +1,9 @@
 """
 Functions for the view code,
 """
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import BlogPost
 from .forms import CommentForm
 
@@ -90,3 +91,24 @@ class BlogPostPage(View):
                 'comment_form': CommentForm()
             },
         )
+
+
+# Class used from "I think therefore I blog" walkthrough.
+class LikeBlogPost(View):
+    """
+    Allow a user to like a
+    blog post submission
+    """
+    def post(self, request, slug):
+        """
+        Check for user.
+        And like/unlike a post
+        """
+        post = get_object_or_404(BlogPost, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('blog-post', args=[slug]))

@@ -82,6 +82,12 @@ Will replace with my own formatting later. -->
         <!-- Add comment form -->
         <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Please wait whilst your comment is approved.
+                </div>
+                
+                {% else %}
                 {% if user.is_authenticated %}
                 <h3>Add your two cents:</h3>
                 <form method="POST" style="margin-top: 1.3em;">
@@ -89,6 +95,7 @@ Will replace with my own formatting later. -->
                     {% csrf_token %}
                     <button type="submit">Submit</button>
                 </form>
+                {% endif %}
                 {% endif %}
             </div>
         </div>
