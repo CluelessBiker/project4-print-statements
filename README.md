@@ -162,6 +162,10 @@ The css styles were not loading into my blog page, or my blog post page. Upon re
 
 After installing ```django-allauth``` I was unable to migrate my changes. Each time I tried, I encountered an error message in the terminal that I could not decipher. I checked & rechecked each of the commands I had used then installing the package, along with adding it to the requirements file, as well as triple checking lines added in settings and urls. Eventually I reached out to Tutor Support, and they informed me that Heroku often alters the DATABASE configvar for security reasons. Upon updating the value in my env.py file, the issue was instantly rectified.
 
+After installing **crispy-forms**, an "Invalid syntx" error was displaying in the terminal. This was fixed by providing the missing comma within the BlogPostPage class.
+
+Django was then throwing an error, as the CSRF token had been added incorrectly to the form field.
+
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.

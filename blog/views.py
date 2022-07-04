@@ -34,7 +34,8 @@ class BlogPostPage(View):
     def get(self, request, slug, *args, **kwargs):
         """
         Create a new URL path
-        for each blog post
+        for each blog post.
+        Create a comments section on the page.
         """
         queryset = BlogPost.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -49,6 +50,42 @@ class BlogPostPage(View):
             {
                 'post': post,
                 'comments': comments,
+                'commented': False,
+                'liked': liked,
+                'comment_form': CommentForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        """
+        Submit a new comment to a
+        blog post.
+        """
+        queryset = BlogPost.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('-created_on')
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        comment_form = CommentForm(data=request.POST)
+
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            'blog-post.html',
+            {
+                'post': post,
+                'comments': comments,
+                'commented': True,
                 'liked': liked,
                 'comment_form': CommentForm()
             },
