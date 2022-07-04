@@ -158,7 +158,9 @@ All photography for the fictional "artists" was supplied by me.
 ## Testing
 I was unable to load the home (index.html) page using the generic views. This was resolved with trial & error, and I realised that by changing the class to a function in views.py, as well as simply rendering the page, along with removing the ```.as_view()``` from the url path resolved the issue.
 
-The css styles were not loading into my blog page, or my blog post page. Upon reviewing this [Django tutorial](https://docs.djangoproject.com/en/4.0/intro/tutorial06/), I discovered that I needed to update my href link to ```{% static 'css/style.css' %}```. This corrected the issue instantly
+The css styles were not loading into my blog page, or my blog post page. Upon reviewing this [Django tutorial](https://docs.djangoproject.com/en/4.0/intro/tutorial06/), I discovered that I needed to update my href link to ```{% static 'css/style.css' %}```. This corrected the issue instantly.
+
+After installing ```django-allauth``` I was unable to migrate my changes. Each time I tried, I encountered an error message in the terminal that I could not decipher. I checked & rechecked each of the commands I had used then installing the package, along with adding it to the requirements file, as well as triple checking lines added in settings and urls. Eventually I reached out to Tutor Support, and they informed me that Heroku often alters the DATABASE configvar for security reasons. Upon updating the value in my env.py file, the issue was instantly rectified.
 
 
 ### Validator Testing
@@ -261,6 +263,8 @@ The initial setup and deployment of this project was done by following the “I 
 In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
 
 With the assistance of Sean at Tutor Support, I was able to add an if statement to my blog page that signled out the most recent blog post. They were very patient with me as I tried to be coherent and explain why I was stuck.
+
+When encountering an error message that I could not decipher, let alone solve, I reached out to Tutor support, and Ger instantly pointed me in the right direction. This is my third encounter with this person over the course of my all my projects, and each time, they have been an invaluable help. 
 
 
 ### Media

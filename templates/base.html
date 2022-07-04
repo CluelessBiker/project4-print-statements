@@ -49,9 +49,20 @@
                     <li class="list-inline-item col-md-2">
                         <a href="{% url 'blog' %}" class="nav-bar">Blog</a>
                     </li>
+                
+                    <!-- If statement taken from "I think therefore I blog" walkthrough -->
+                    {% if user.is_authenticated %}
                     <li class="list-inline-item col-md-2">
-                        <a href="#" class="nav-bar">Log in / Sign up</a>
+                        <a class="nav-bar" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% else %}
+                    <!-- <li class="list-inline-item col-md-2">
+                        <a class="nav-bar" href="{% url 'account_signup' %}">Register</a>
+                    </li> -->
+                    <li class="list-inline-item col-md-2">
+                        <a class="nav-bar" href="{% url 'account_login' %}">Login / Sign up</a>
+                    </li>
+                    {% endif %}
                     <!-- <li class="list-inline-item col-md-2">
                         <a href="#" class="nav-bar">Contact us</a>
                     </li> -->
