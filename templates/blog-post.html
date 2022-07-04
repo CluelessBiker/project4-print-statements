@@ -4,6 +4,7 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Blog post -->
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -28,6 +29,22 @@
                 </div>
                 <div class="row">
                     <div class="col-2">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                        </strong>
+
                         <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
                     </div>
                     <div class="col-2">
@@ -42,25 +59,9 @@
         </div>
     </div>
 
-<!-- Blog post -->
-
-
 <!-- Following two sections taken from "I think therefore I blog"
 Will replace with my own formatting later. -->
 <div class="container">
-    <!-- <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                
-                
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div> -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>

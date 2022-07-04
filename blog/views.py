@@ -111,4 +111,4 @@ class LikeBlogPost(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('blog-post', args=[slug]))
+        return HttpResponseRedirect(reverse('blog_post', args=[slug]))
