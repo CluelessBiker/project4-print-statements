@@ -1,5 +1,5 @@
 """
-Comments form, allowing users to 
+Comments form, allowing users to
 comment on blog posts
 """
 

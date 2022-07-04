@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
 
     <div class="container">
         <div class="row">
@@ -77,8 +78,18 @@ Will replace with my own formatting later. -->
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+
+        <!-- Add comment form -->
+        <div class="col-md-4 card mb-4 mt-3 ">
             <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Add your two cents:</h3>
+                <form method="POST" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% crfs_token %}
+                    <button type="submit">Submit</button>
+                </form>
+                {% endif %}
             </div>
         </div>
     </div>
