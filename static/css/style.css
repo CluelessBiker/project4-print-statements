@@ -51,7 +51,7 @@ h3 {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 1.5em;
-    padding: 5px 10px;
+    padding: 5px 70px;
 }
 
 .nav-bar:hover{
@@ -116,6 +116,11 @@ h3 {
 
 /* Desktops, large screens. */
 @media screen and (max-width:1200px){
+    /* Navigation bar */
+    .nav-bar {
+        padding: 5px 40px;
+    }
+
     .hero-page {
         background-position-y: -420px;
     }
@@ -138,9 +143,10 @@ h3 {
     #nav {
         height: 20px;
     }
-    
+
     .nav-bar {
         font-size: 1em;
+        padding: 5px 38px;
     }
 
     .hero-page {
@@ -151,6 +157,12 @@ h3 {
 
 /* iPads, Tablets. */
 @media screen and (max-width:768px){
+
+    .nav-bar {
+        font-size: 1em;
+        padding: 5px 12px;
+    }
+
     .hero-page {
         height: 400px;
         background-position-y: -250px;
