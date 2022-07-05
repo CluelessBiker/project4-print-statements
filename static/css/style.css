@@ -46,10 +46,6 @@ h3 {
     height: auto;
 }
 
-.nav-spacing {
-    justify-content: space-between;
-}
-
 .nav-bar {
     color: #1A313C;
     text-align: center;
@@ -147,9 +143,9 @@ h3 {
 
 /* iPads, Tablets. */
 @media screen and (max-width:768px){
-
-    .logo-tagline {
-        height: auto;
+    .hero-page {
+        height: 400px;
+        background-position-y: -250px;
     }
 }
 
