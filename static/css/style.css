@@ -8,7 +8,7 @@ h1, h2, h3 {
 /* Site logo & tagline */
 .logo-tagline {
     text-align: center;
-    height: 150px;
+    height: auto;
 }
 
 h1 {
@@ -43,7 +43,11 @@ h3 {
 /* Navigation bar */
 #nav {
     text-align: center;
-    height: 15px;
+    height: auto;
+}
+
+.nav-spacing {
+    justify-content: space-between;
 }
 
 .nav-bar {
@@ -51,6 +55,7 @@ h3 {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 1.5em;
+    padding: 5px 10px;
 }
 
 .nav-bar:hover{
@@ -141,7 +146,12 @@ h3 {
 }
 
 /* iPads, Tablets. */
-/* @media screen and (max-width:768px){} */
+@media screen and (max-width:768px){
+
+    .logo-tagline {
+        height: auto;
+    }
+}
 
 /* Mobile devices. */
 @media screen and (max-width:480px){
