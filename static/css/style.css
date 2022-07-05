@@ -58,6 +58,10 @@ h3 {
     color: #EFB542;
 }
 
+.display-mobile {
+    display: none;
+}
+
 /* Hero image */
 .hero-page {
     width: 90%;
@@ -70,16 +74,18 @@ h3 {
     contain: content;
 }
 
-/* .hero-image {
-    width: 100%;
-    overflow: none;
-} */
-
 /* Blog: all posts */
-.main-post {
+/* .main-post {
     margin: 0 auto;
+} */
+.left-posts {
+    float: left;
+}
+.right-posts {
+    float: right;
 }
 
+/* Social links */
 .social-icons {
     text-align: center;
     font-size: 150%;
@@ -135,12 +141,7 @@ h3 {
 }
 
 /* iPads, Tablets. */
-@media screen and (max-width:768px){
-
-    .display-mobile {
-        display: none;
-    }
-}
+/* @media screen and (max-width:768px){} */
 
 /* Mobile devices. */
 @media screen and (max-width:480px){
@@ -165,6 +166,11 @@ h3 {
 
     .center-burger-tag {
         justify-content: center;
+        align-items: flex-end;
+    }
+
+    .burger {
+        font-size: 1.4em;
     }
 
     /* Hero image */
