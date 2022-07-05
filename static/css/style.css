@@ -115,7 +115,11 @@ h3 {
 @media screen and (min-width:1500px){} */
 
 /* Desktops, large screens. */
-/* @media screen and (max-width:1200px){} */
+@media screen and (max-width:1200px){
+    .hero-page {
+        background-position-y: -420px;
+    }
+}
 
 /* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */
 @media screen and (max-width:950px){
@@ -137,6 +141,10 @@ h3 {
     
     .nav-bar {
         font-size: 1em;
+    }
+
+    .hero-page {
+        background-position-y: -265px;
     }
 
 }
