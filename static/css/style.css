@@ -164,13 +164,27 @@ h3 {
         display: block;
     }
 
-    .center-burger-tag {
-        justify-content: center;
-        align-items: flex-end;
+    .menu-btn-container {
+        text-align: center;
+        padding-top: 15px;
     }
 
-    .burger {
-        font-size: 1.4em;
+    .menu-btn-container li{
+        text-align: center;
+    }
+
+    .menu-btn {
+        padding: 0;
+        border: none;
+        font-family: 'Kanit', sans-serif;
+        background: none;
+        color: #1A313C;
+    }
+
+    .btn-secondary:hover {
+        border: none;
+        background: none;
+        color: #1A313C;
     }
 
     /* Hero image */

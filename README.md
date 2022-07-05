@@ -273,6 +273,8 @@ When encountering an error message that I could not decipher, let alone solve, I
 
 The following Article on ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html), provided some insight into how to create different types of user groups.
 
+I implemented the use of the Bootstrap [Dropdown](https://getbootstrap.com/docs/5.2/components/dropdowns/) for use in the nav bar, used to clean up the look of the site when viewing it on a mobile device.
+
 
 ### Media
 - All photography displayed in the gallery was created by me.

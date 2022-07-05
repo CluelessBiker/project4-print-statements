@@ -31,6 +31,36 @@
             </a>
             <h3>What does yours say?</h3>
         </div>
+        <!-- Collapsable nav bar  & site logo for mobile view -->
+        <div class="dropdown-center display-mobile menu-btn-container">
+            <button class="btn btn-secondary dropdown-toggle menu-btn" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i> menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownCenterBtn">
+                <li>
+                    <a href="{% url 'home' %}" class="nav-bar">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-bar">About</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-bar">Prints</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog' %}" class="nav-bar">Blog</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="nav-bar" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="nav-bar" href="{% url 'account_login' %}">Login / Sign up</a>
+                </li>
+                {% endif %}
+            </ul>
+          </div>
         <hr>
 
         <!-- Navigation bar -->
@@ -70,45 +100,6 @@
             </div>
         </div>
         <hr class="vanish-mobile">
-
-        <!-- Collapsable nav bar for mobile view -->
-        <div class="accordion-item display-mobile">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <ul class="">
-                        <li>
-                            <a href="{% url 'home' %}" class="nav-bar">Home</a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-bar">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-bar">Prints</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'blog' %}" class="nav-bar">Blog</a>
-                        </li>
-
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a class="nav-bar" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li>
-                            <a class="nav-bar" href="{% url 'account_login' %}">Login / Sign up</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
-        </div>
     </header>
 
     <body>
