@@ -100,39 +100,50 @@ h3 {
 }
 
 /* Blog: all posts */
+.blog-posts-area {
+    height: auto;
+    /* align-items: flex-end; */
+    margin: 0 auto;
+    width: 90%;
+}
+
 .all-posts-post-box {
     box-sizing: border-box;
     border: 1px solid #1A313C;
     border-radius: 2%;
     padding: 20px;
+    margin: 0 0 0 0;
 }
 .all-posts-post-box img{
     width: 90%;
 }
 
 .left-posts {
-    float: left;
     width: 24%;
+    margin: 0 0 0 0;
 }
 .right-posts {
     width: 24%;
-    float: right;
+    margin: 0 0 0 0;
 }
 
 .main-posts {
     width: 48%;
-    margin: 0 auto;
-    float: none;
+    margin: 0 0 0 0;
 }
 
 .second-left-posts {
     width: 24%;
+    margin: 0 0 0 0;
 }
 .second-right-posts {
     width: 24%;
+    margin: 0 0 0 0;
 }
 
-
+.next-page {
+    clear: both;
+}
 
 /* @media screen and (min-width:1600px){}
 
