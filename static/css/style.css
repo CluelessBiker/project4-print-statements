@@ -159,6 +159,14 @@ h3 {
     color: #2B1633;
 }
 
+.single-post-comments {
+    margin: 20px auto;
+}
+
+.single-post-comments h3 {
+    margin-top: 20px;
+}
+
 
 /* @media screen and (min-width:1600px){}
 

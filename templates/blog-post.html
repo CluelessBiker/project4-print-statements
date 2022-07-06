@@ -18,8 +18,9 @@
         <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
         {% endif %}
 
-        <!-- POST LIKES & COMMENTS -->
+        
         <div class="row">
+            <!-- POST LIKES -->
             <div class="col-2 likes-comments">
                 <strong>
                     {% if user.is_authenticated %}
@@ -38,13 +39,35 @@
                     <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
                     {% endif %}
                 </strong>
-
-
             </div>
+
+            <!-- # OF POST COMMENTS -->
             <div class="col-2 likes-comments">
                 {% with comments.count as total_comments %}
                 <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
                 {% endwith %}
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- POST COMMENTS -->
+            <!-- card taken from django walkthrough -->
+            <div class="card col-md-11 single-post-comments">
+                <h3>Comments:</h3>
+                <div class="card-body">
+                    {% for comment in comments %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            {{ comment.name }}
+                            <span class=" text-muted font-weight-normal">
+                                {{ comment.created_on }}
+                            </span> wrote:
+                        </p>
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
@@ -66,22 +89,7 @@
     Will replace with my own formatting later. -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    {{ comment.body | linebreaks }}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+        
 
         <!-- Add comment form -->
         <div class="col-md-4 card mb-4 mt-3 ">
