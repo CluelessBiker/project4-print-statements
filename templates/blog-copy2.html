@@ -275,3 +275,42 @@
         {% endif %}
     {% endfor %}   
     </div>
+
+    <!-- THEIR STYLING -->
+    <div class="container-fluid">
+        <div class="row">
+    
+            <!-- Blog Entries Column -->
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for post in blogpost_list %}
+                    <div class="left-posts">
+                        <div class="all-posts-post-box">
+                            <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                            </a>
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                alt="default image">
+                            {% else %}
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                            {% endif %}
+                            <p>{{ post.excerpt }}</p>
+                            <div>
+                                <h3>Author: {{ post.author }}</h3>
+                                <p>{{ post.created_on}}</p>
+                                <div><i class="far fa-heart"></i>  {{ post.number_of_likes }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+    
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+    
+            </div>
+        </div>
+    </div>

@@ -30,7 +30,7 @@ class BlogPage(generic.ListView):
     model = BlogPost
     queryset = BlogPost.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog.html'
-    paginate_by = 5
+    paginate_by = 7
 
 
 # Class used from "I think therefore I blog" walkthrough.
