@@ -118,32 +118,29 @@ h3 {
     width: 90%;
 }
 
-.left-posts {
-    width: 24%;
-    margin: 0 0 0 0;
-}
-.right-posts {
-    width: 24%;
-    margin: 0 0 0 0;
-}
-
-.main-posts {
-    width: 48%;
-    margin: 0 0 0 0;
-}
-
-.second-left-posts {
-    width: 24%;
-    margin: 0 0 0 0;
-}
-.second-right-posts {
-    width: 24%;
-    margin: 0 0 0 0;
-}
-
 .next-page {
     clear: both;
 }
+
+/* SINGLE BLOG POST PAGE */
+.single-blog-post {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.single-blog-post h1{
+    margin: 40px auto;
+}
+
+.single-blog-img {
+    contain: content;
+}
+
+.single-blog-img img{
+    width: 100%;
+}
+
 
 /* @media screen and (min-width:1600px){}
 

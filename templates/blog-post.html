@@ -4,104 +4,105 @@
 
 {% load crispy_forms_tags %}
 
-<!-- Blog post -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                    {% if "placeholder" in post.featured_image.url %}
-                    <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="default image" width="100%">
-                    {% else %}
-                    <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}" width="100%">
-                    {% endif %}
-                </div>
-            </div>
+<body>
+    <div class="row single-blog-post">
+        <h1 class="name">{{ post.title }}</h1>
+    </div>
+    <div class="row single-blog-post">
+        <div class="col-md-5 single-blog-img">
+            <!-- BLOG POST IMAGE -->
+            {% if "placeholder" in post.featured_image.url %}
+            <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="default image">
+            {% else %}
+            <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+            {% endif %}
 
-            <div class="col-md-4">
-                <div class="row">
-                    <h1 class="post-title">{{ post.title }}</h1>
-                </div>
-                <div class="row">
-                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-                </div>
-                <div class="row">
-                    <p class="card-text ">{{ post.content | safe }}</p>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-
+            <!-- POST LIKES & COMMENTS -->
+            <div class="row">
+                <div class="col-2">
+                    <strong>
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="fas fa-heart"></i>  {{ post.number_of_likes }}</button>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="far fa-heart"></i>  {{ post.number_of_likes }}</button>
                             {% endif %}
-                        </strong>
+                        </form>
 
+                        {% else %}
                         <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
-                    </div>
-                    <div class="col-2">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+                        {% endif %}
+                    </strong>
 
-<!-- Following two sections taken from "I think therefore I blog"
-Will replace with my own formatting later. -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    {{ comment.body | linebreaks }}
+                    
                 </div>
-                {% endfor %}
+                <div class="col-2">
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
+                    {% endwith %}
+                </div>
             </div>
         </div>
 
-        <!-- Add comment form -->
-        <div class="col-md-4 card mb-4 mt-3 ">
-            <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Please wait whilst your comment is approved.
+        <!-- TITLE - AUTHOR - CONTENT -->
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col heading">
+                    <h2 class="title">{{ post.author }} | {{ post.created_on }}</h2>
                 </div>
-                
-                {% else %}
-                {% if user.is_authenticated %}
-                <h3>Add your two cents:</h3>
-                <form method="POST" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit">Submit</button>
-                </form>
-                {% endif %}
-                {% endif %}
+            </div>
+            <div class="row">
+                <p>{{ post.content | safe }}</p>
             </div>
         </div>
     </div>
-</div>
 
+    <!-- Following two sections taken from "I think therefore I blog"
+    Will replace with my own formatting later. -->
+    <div class="container">
+            <div class="row">
+                <div class="col-md-8 card mb-4  mt-3 ">
+                    <h3>Comments:</h3>
+                    <div class="card-body">
+                        {% for comment in comments %}
+                        <div class="comments" style="padding: 10px;">
+                            <p class="font-weight-bold">
+                                {{ comment.name }}
+                                <span class=" text-muted font-weight-normal">
+                                    {{ comment.created_on }}
+                                </span> wrote:
+                            </p>
+                            {{ comment.body | linebreaks }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Add comment form -->
+                <div class="col-md-4 card mb-4 mt-3 ">
+                    <div class="card-body">
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert">
+                            Please wait whilst your comment is approved.
+                        </div>
+
+                        {% else %}
+                        {% if user.is_authenticated %}
+                        <h3>Add your two cents:</h3>
+                        <form method="POST" style="margin-top: 1.3em;">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit">Submit</button>
+                        </form>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
 
 {% endblock %}
