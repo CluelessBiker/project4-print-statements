@@ -5,16 +5,13 @@ h1, h2, h3 {
     color: #1A313C;
 }
 
-/* Site logo & tagline */
+/* SITE LOGO & TAG LINE */
 .logo-tagline {
     text-align: center;
     height: auto;
 }
 
 h1 {
-    /* font-family: 'Permanent Marker', cursive; */
-    /* font-family: 'Play', sans-serif;
-    font-weight: 700; */
     font-family: 'Kanit', sans-serif;
     font-weight: 900;
     letter-spacing: 3px;
@@ -40,7 +37,7 @@ h3 {
     
 }
 
-/* Navigation bar */
+/* NAVIGATION BAR */
 #nav {
     text-align: center;
     height: auto;
@@ -63,7 +60,7 @@ h3 {
     display: none;
 }
 
-/* Hero image */
+/* HERO IMAGE */
 .hero-page {
     width: 90%;
     height: 600px;
@@ -75,7 +72,7 @@ h3 {
     contain: content;
 }
 
-/* Social links */
+/* SOCIAL LINKS */
 .social-icons {
     text-align: center;
     font-size: 150%;
@@ -99,10 +96,9 @@ h3 {
 
 }
 
-/* Blog: all posts */
+/* BLOG: ALL POSTS */
 .blog-posts-area {
     height: auto;
-    /* align-items: flex-end; */
     margin: 0 auto;
     width: 90%;
 }
@@ -131,6 +127,18 @@ h3 {
 
 .single-blog-post h1{
     margin: 40px auto;
+    color: #2B1633;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.single-blog-author {
+    font-family: 'Shadows Into Light Two', cursive;
+    text-transform: uppercase;
+}
+
+.single-blog-bodytext {
+    font-family: 'Kanit', sans-serif;
 }
 
 .single-blog-img {
@@ -139,6 +147,16 @@ h3 {
 
 .single-blog-img img{
     width: 100%;
+}
+
+.like-button,
+.like-button-pressed {
+    background: none;
+    border: none;
+}
+
+.like-button-pressed i {
+    color: #2B1633;
 }
 
 

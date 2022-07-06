@@ -4,105 +4,107 @@
 
 {% load crispy_forms_tags %}
 
-<body>
-    <div class="row single-blog-post">
-        <h1 class="name">{{ post.title }}</h1>
-    </div>
-    <div class="row single-blog-post">
-        <div class="col-md-5 single-blog-img">
-            <!-- BLOG POST IMAGE -->
-            {% if "placeholder" in post.featured_image.url %}
-            <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="default image">
-            {% else %}
-            <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
-            {% endif %}
 
-            <!-- POST LIKES & COMMENTS -->
-            <div class="row">
-                <div class="col-2">
-                    <strong>
-                        {% if user.is_authenticated %}
-                        <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if liked %}
-                            <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="fas fa-heart"></i>  {{ post.number_of_likes }}</button>
-                            {% else %}
-                            <button type="submit", name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="far fa-heart"></i>  {{ post.number_of_likes }}</button>
-                            {% endif %}
-                        </form>
+<div class="row single-blog-post">
+    <h1 class="name">{{ post.title }}</h1>
+</div>
+<div class="row single-blog-post">
+    <div class="col-md-5 single-blog-img">
+        <!-- BLOG POST IMAGE -->
+        {% if "placeholder" in post.featured_image.url %}
+        <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="default image">
+        {% else %}
+        <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+        {% endif %}
 
+        <!-- POST LIKES & COMMENTS -->
+        <div class="row">
+            <div class="col-2 likes-comments">
+                <strong>
+                    {% if user.is_authenticated %}
+                    <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" , name="blogpost_id" value="{{ post.slug }}"
+                            class="like-button-pressed"><i class="fas fa-heart"></i> {{ post.number_of_likes }}</button>
                         {% else %}
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                        <button type="submit" , name="blogpost_id" value="{{ post.slug }}" class="like-button"><i
+                                class="far fa-heart"></i> {{ post.number_of_likes }}</button>
                         {% endif %}
-                    </strong>
+                    </form>
 
-                    
-                </div>
-                <div class="col-2">
-                    {% with comments.count as total_comments %}
-                    <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
-                    {% endwith %}
-                </div>
-            </div>
-        </div>
+                    {% else %}
+                    <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                    {% endif %}
+                </strong>
 
-        <!-- TITLE - AUTHOR - CONTENT -->
-        <div class="col-md-7">
-            <div class="row">
-                <div class="col heading">
-                    <h2 class="title">{{ post.author }} | {{ post.created_on }}</h2>
-                </div>
+
             </div>
-            <div class="row">
-                <p>{{ post.content | safe }}</p>
+            <div class="col-2 likes-comments">
+                {% with comments.count as total_comments %}
+                <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
+                {% endwith %}
             </div>
         </div>
     </div>
 
-    <!-- Following two sections taken from "I think therefore I blog"
+    <!-- TITLE - AUTHOR - CONTENT -->
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col single-blog-author">
+                <h2 class="title">{{ post.author }} | {{ post.created_on }}</h2>
+            </div>
+        </div>
+        <div class="row single-blog-bodytext">
+            <p>{{ post.content | safe }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Following two sections taken from "I think therefore I blog"
     Will replace with my own formatting later. -->
-    <div class="container">
-            <div class="row">
-                <div class="col-md-8 card mb-4  mt-3 ">
-                    <h3>Comments:</h3>
-                    <div class="card-body">
-                        {% for comment in comments %}
-                        <div class="comments" style="padding: 10px;">
-                            <p class="font-weight-bold">
-                                {{ comment.name }}
-                                <span class=" text-muted font-weight-normal">
-                                    {{ comment.created_on }}
-                                </span> wrote:
-                            </p>
-                            {{ comment.body | linebreaks }}
-                        </div>
-                        {% endfor %}
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    {{ comment.body | linebreaks }}
                 </div>
-
-                <!-- Add comment form -->
-                <div class="col-md-4 card mb-4 mt-3 ">
-                    <div class="card-body">
-                        {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            Please wait whilst your comment is approved.
-                        </div>
-
-                        {% else %}
-                        {% if user.is_authenticated %}
-                        <h3>Add your two cents:</h3>
-                        <form method="POST" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit">Submit</button>
-                        </form>
-                        {% endif %}
-                        {% endif %}
-                    </div>
-                </div>
+                {% endfor %}
             </div>
+        </div>
+
+        <!-- Add comment form -->
+        <div class="col-md-4 card mb-4 mt-3 ">
+            <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Please wait whilst your comment is approved.
+                </div>
+
+                {% else %}
+                {% if user.is_authenticated %}
+                <h3>Add your two cents:</h3>
+                <form method="POST" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
     </div>
-</body>
+</div>
+
 
 {% endblock %}
