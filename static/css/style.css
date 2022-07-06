@@ -96,6 +96,33 @@ h3 {
 
 }
 
+/* ABOUT PAGE */
+.about-page {
+    width: 90%;
+    margin: auto;
+}
+
+.about-image {
+    height: 600px;
+    margin: 0 auto;
+    background: url(../images/three-frames.jpg) no-repeat;
+    background-size: 100%;
+    contain: content;
+}
+
+.about-page h2 {
+    font-family: 'Kanit', sans-serif;
+    color: #EFB542;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: -13px;
+}
+
+.about-page p {
+    font-size: 1.2em;
+}
+
 /* BLOG: ALL POSTS */
 .blog-posts-area {
     height: auto;
@@ -270,6 +297,14 @@ h3 {
         height: 400px;
         background-position-y: -250px;
     }
+
+    /* ABOUT PAGE */
+    .about-page h2 {
+        margin-top: 0px;
+    }
+    .about-image {
+        height: 325px;
+    }
 }
 
 /* Mobile devices. */
@@ -320,5 +355,10 @@ h3 {
     .hero-page {
         height: 307px;
         background-position-y: -25px;
+    }
+
+    /* ABOUT PAGE */
+    .about-image {
+        height: 220px;
     }
 }
