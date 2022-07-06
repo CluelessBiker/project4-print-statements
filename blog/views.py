@@ -15,6 +15,13 @@ def home_page(request):
     return render(request, 'index.html')
 
 
+def about_page(request):
+    """
+    View for about page.
+    """
+    return render(request, 'about.html')
+
+
 # Class used from "I think therefore I blog" walkthrough.
 class BlogPage(generic.ListView):
     """
