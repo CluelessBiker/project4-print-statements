@@ -9,7 +9,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-5 login-out-register">
       <h2>{% trans "Sign In" %}</h2>
 
       {% get_providers as socialaccount_providers %}
@@ -42,8 +42,10 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
+        <button class="primaryAction login-register-button"type="submit">{% trans "Sign In" %}</button>
+        <br>
+        <br>
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
       </form>
 
     </div>

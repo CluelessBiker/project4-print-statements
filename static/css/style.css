@@ -103,6 +103,10 @@ h3 {
     width: 90%;
 }
 
+.left-posts {
+    width: 24%;
+}
+
 .all-posts-post-box {
     box-sizing: border-box;
     border: 1px solid #1A313C;
@@ -165,6 +169,37 @@ h3 {
 
 .single-post-comments h3 {
     margin-top: 20px;
+}
+
+/* LOGIN - LOGOUT - REGISTER */
+.login-out-register {
+    margin: auto;
+    border: 0.5px solid #1A313C;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login-out-register h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 2.5em;
+    text-transform: lowercase;
+    color: #EFB542;
+}
+
+.login-out-register p {
+    font-size: 1.2em;
+}
+
+.login-register-button {
+    background: #1A313C;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    padding: 0 10px;
 }
 
 

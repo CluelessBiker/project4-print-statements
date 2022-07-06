@@ -4,7 +4,6 @@
 
 {% load crispy_forms_tags %}
 
-
 <div class="row single-blog-post">
     <h1 class="name">{{ post.title }}</h1>
 </div>
@@ -63,7 +62,7 @@
 
         <div class="row">
             <!-- POST COMMENTS -->
-            <!-- card taken from django walkthrough -->
+            <!-- card modified from django walkthrough -->
             <div class="card col-md-11 single-post-comments">
                 <h3>Comments:</h3>
                 <div class="card-body">
@@ -85,7 +84,7 @@
 
         <div class="row">
             <!-- SUBMIT COMMENT -->
-            <!-- card taken from django walkthrough -->
+            <!-- card modified from django walkthrough -->
             <div class="card col-md-11 single-post-comments">
                 <div class="card-body">
                     {% if commented %}
