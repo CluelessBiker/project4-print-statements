@@ -9,6 +9,18 @@
     <h1 class="name">{{ post.title }}</h1>
 </div>
 <div class="row single-blog-post">
+    <!-- TITLE - AUTHOR - CONTENT -->
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col single-blog-author">
+                <h2 class="title">{{ post.author }} | {{ post.created_on }}</h2>
+            </div>
+        </div>
+        <div class="row single-blog-bodytext">
+            <p>{{ post.content | safe }}</p>
+        </div>
+    </div>
+
     <div class="col-md-5 single-blog-img">
         <!-- BLOG POST IMAGE -->
         {% if "placeholder" in post.featured_image.url %}
@@ -42,7 +54,7 @@
             </div>
 
             <!-- # OF POST COMMENTS -->
-            <div class="col-2 likes-comments">
+            <div class="col-3 likes-comments">
                 {% with comments.count as total_comments %}
                 <strong class="text-secondary"><i class="far fa-comments"></i> {{ total_comments }}</strong>
                 {% endwith %}
@@ -92,18 +104,6 @@
                     {% endif %}
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- TITLE - AUTHOR - CONTENT -->
-    <div class="col-md-7">
-        <div class="row">
-            <div class="col single-blog-author">
-                <h2 class="title">{{ post.author }} | {{ post.created_on }}</h2>
-            </div>
-        </div>
-        <div class="row single-blog-bodytext">
-            <p>{{ post.content | safe }}</p>
         </div>
     </div>
 </div>

@@ -197,7 +197,7 @@ h3 {
         font-size: 1em;
     }
     
-    /* Navigation bar */
+    /* NAVIGATION BAR */
     #nav {
         height: 20px;
     }
@@ -209,6 +209,16 @@ h3 {
 
     .hero-page {
         background-position-y: -265px;
+    }
+
+    /* SINGLE BLOG POST PAGE */
+    .single-blog-post h1{
+        margin: 20px auto;
+        font-size: 2em;
+    }
+
+    .single-blog-author h2{
+        font-size: 1.4em;
     }
 
 }
