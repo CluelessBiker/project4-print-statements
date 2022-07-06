@@ -70,6 +70,29 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <!-- SUBMIT COMMENT -->
+            <!-- card taken from django walkthrough -->
+            <div class="card col-md-11 single-post-comments">
+                <div class="card-body">
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Please wait whilst your comment is approved.
+                    </div>
+                    {% else %}
+                    {% if user.is_authenticated %}
+                    <h3>Add your two cents:</h3>
+                    <form method="POST" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit">Submit</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- TITLE - AUTHOR - CONTENT -->
@@ -84,35 +107,5 @@
         </div>
     </div>
 </div>
-
-<!-- Following two sections taken from "I think therefore I blog"
-    Will replace with my own formatting later. -->
-<div class="container">
-    <div class="row">
-        
-
-        <!-- Add comment form -->
-        <div class="col-md-4 card mb-4 mt-3 ">
-            <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Please wait whilst your comment is approved.
-                </div>
-
-                {% else %}
-                {% if user.is_authenticated %}
-                <h3>Add your two cents:</h3>
-                <form method="POST" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit">Submit</button>
-                </form>
-                {% endif %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-
 
 {% endblock %}
