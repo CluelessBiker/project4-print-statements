@@ -166,6 +166,8 @@ After installing **crispy-forms**, an "Invalid syntx" error was displaying in th
 
 Django was then throwing an error, as the CSRF token had been added incorrectly to the form field.
 
+After adding a "categories" field to my Artprints model, I then received an error message when trying to migrate the changes, as it was a required field & no default foreignkey was provided. I added a default field, assuming I could name a category, and this in turn caused a whole new string of error messages. After updating the field, I was unable to migrate the changes still, as the error kept persisting. I looked up how to revert the migrations on [Stackoverflow](https://stackoverflow.com/questions/32123477/how-to-revert-the-last-migration) using the following command: ```./manage.py migrate artprints zero```, but this did not resolve the issue. After consulting with a fellow student who had experienced something similar, [Mats Simonsson](https://github.com/Pelikantapeten), I then deleted the files out of the migrations folder within my app folder. As I had not yet pupolated the databases with a significant amount of information, this seemed like a reasonable fix.
+
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
@@ -277,13 +279,14 @@ I implemented the use of the Bootstrap [Dropdown](https://getbootstrap.com/docs/
 
 
 ### Media
-- All photography displayed in the gallery was created by me.
+- All photography displayed in the Artists gallery was created by me.
+- The drawings were provided by my friend, [Eleni Sarri](https://www.instagram.com/elenibydesign/), with her permission.
 
-##### Landing page image:
-- Green photo frame downloaded from Pexels, Photo by [Barbara Wyrowińska](https://www.pexels.com/photo/green-photo-frame-2961734/)
-- Photo wall downloaded from Pexels, Photo by [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
-- dark green gallery wall from Pexels, Photo by [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
-- Default blog post image, Photo from Pexels, by [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
+##### Pexels stock images:
+<!-- - unused, Photo by [Barbara Wyrowińska](https://www.pexels.com/photo/green-photo-frame-2961734/) -->
+- Hero image, Photo by [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
+- About page, Photo by [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
+- Default blog post image, by [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
 
 DATA SETS:
 Sign-up - visitor:

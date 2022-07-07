@@ -8,8 +8,8 @@ from .models import ArtPrint, Category
 
 @admin.register(ArtPrint)
 class PrintAdmin(admin.ModelAdmin):
-    prepoulated_fields = {'slug': ('print_name',)}
-    list_display = ('artist', 'status', 'created_on')
+    prepopulated_fields = {'slug': ('print_name',)}
+    list_display = ('print_name', 'artist', 'status', 'created_on')
     list_filter = ('artist', 'created_on')
     search_fields = ['print_name', 'artist']
 
