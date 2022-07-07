@@ -8,6 +8,24 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+class Category(models.Model):
+    """
+    Art Categories
+    """
+    categories = models.CharField(max_length=20)
+
+    class Meta:
+        """
+        Display order
+        """
+        ordering = ('categories',)
+
+    def __str__(self):
+        """
+        Display order
+        """
+        return self.categories
+
 
 class ArtPrint(models.Model):
     """
@@ -49,22 +67,3 @@ class ArtPrint(models.Model):
         To return total number of print likes
         """
         return self.likes.count()
-
-
-class Category(models.Model):
-    """
-    Art Categories
-    """
-    categories = models.CharField(max_length=20)
-
-    class Meta:
-        """
-        Display order
-        """
-        ordering = ('categories',)
-
-    def __str__(self):
-        """
-        Display order
-        """
-        return self.categories
