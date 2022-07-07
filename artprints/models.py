@@ -18,6 +18,7 @@ class ArtPrint(models.Model):
     artist = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='art_prints')
     description = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, blank=False, null=False)
     artwork_image = CloudinaryField('image', null=False, blank=False)
     print_height = models.IntegerField(null=False, blank=False)
     print_width = models.IntegerField(null=False, blank=False)
@@ -48,3 +49,22 @@ class ArtPrint(models.Model):
         To return total number of print likes
         """
         return self.likes.count()
+
+
+class Category(models.Model):
+    """
+    Art Categories
+    """
+    categories = models.CharField(max_length=20)
+
+    class Meta:
+        """
+        Display order
+        """
+        ordering = ('categories',)
+
+    def __str__(self):
+        """
+        Display order
+        """
+        return self.categories
