@@ -273,7 +273,10 @@ h3 {
     font-size: 1.2em;
 }
 
-.login-register-button {
+/* SITE BUTTONS: */
+.login-register-button,
+.pagination-button,
+.submit-comment-button {
     background: #1A313C;
     border-radius: 4px;
     border: none;
@@ -281,6 +284,10 @@ h3 {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     padding: 0 10px;
+}
+
+.next-prev-button {
+    justify-content: center;
 }
 
 
