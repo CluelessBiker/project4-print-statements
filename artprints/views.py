@@ -13,4 +13,4 @@ class PrintsPage(generic.ListView):
     model = ArtPrint
     queryset = ArtPrint.objects.filter(status=1).order_by('-created_on')
     template_name = 'prints.html'
-    paginate_by = 10
+    paginate_by = 12

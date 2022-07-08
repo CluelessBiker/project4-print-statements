@@ -2,6 +2,53 @@
 
 {% block content %}
 
-<h1>WHAT?!</h1>
+<!-- ART PRINTS -->
+<div class="col-12 blog-print-posts-area">
+    <div class="row print-display">
+        {% for print in artprint_list %}
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <div class="image-container">
+                        <img class="card-img-top" src="{{ print.artwork_image.url }}" alt="{{ print.print_name }}">
+                        <div class="image-flash">
+                            <p>Artist: {{ print.artist }}</p>
+                        </div>
+                    </div>
+                    <a href="#" class="print-link">
+                        <h2>{{ print.print_name }}</h2>
+                    </a>
+                    <hr />
+                    <p>remaining copies: {{ print.remaining_copies }}/{{ print.print_run }}</p>
+                    <p>Price: €{{ print.price }}</p>
+                    <p class="card-text text-muted h6"><i class="far fa-heart"></i> {{ print.number_of_likes }}</p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+    </div>
+    <div class="row print-display">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+<div>
+    <!-- Taken from "I think therefore I blog" -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 {%endblock%}

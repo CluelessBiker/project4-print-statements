@@ -277,6 +277,8 @@ The following Article on ['Simple is Better Than Complex'](https://simpleisbette
 
 I implemented the use of the Bootstrap [Dropdown](https://getbootstrap.com/docs/5.2/components/dropdowns/) for use in the nav bar, used to clean up the look of the site when viewing it on a mobile device.
 
+How to link URLS from multiple apps came from this post on [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps)
+
 
 ### Media
 - All photography displayed in the Artists gallery was created by me.

@@ -121,10 +121,30 @@ h3 {
 
 .about-page p {
     font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+/* ARTPRINTS: ALL PRINTS */
+.print-display {
+    align-items: center;
+}
+
+.all-prints-cards h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.all-prints-cards p {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 3px 0;
 }
 
 /* BLOG: ALL POSTS */
-.blog-posts-area {
+.blog-print-posts-area {
     height: auto;
     margin: 0 auto;
     width: 90%;
