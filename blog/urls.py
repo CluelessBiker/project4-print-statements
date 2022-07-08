@@ -1,5 +1,5 @@
 """
-URL paths to render each viw to the browser.
+URL paths to render each view to the browser.
 """
 from django.urls import path
 from . import views
