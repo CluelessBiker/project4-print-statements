@@ -65,9 +65,7 @@ h3 {
     width: 90%;
     height: 600px;
     margin: 0 auto;
-    /* background: url(../images/gallery-wall.jpg) no-repeat; */
-    /* background: url(/static/images/gallery-wall.jpg) no-repeat; */
-    background: url('{% static "images/gallery-wall.jpg" %}') no-repeat;
+    background: url(../images/gallery-wall.jpg) no-repeat;
     background-size: 100%;
     background-position-x: 0px;
     background-position-y: -717px;
@@ -107,9 +105,7 @@ h3 {
 .about-image {
     height: 600px;
     margin: 0 auto;
-    /* background: url(../images/three-frames.jpg) no-repeat; */
-    /* background: url(/static/images/three-frames.jpg) no-repeat; */
-    background: url('{% static "images/three-frames.jpg" %}') no-repeat;
+    background: url(../images/three-frames.jpg) no-repeat;
     background-size: 100%;
     contain: content;
 }

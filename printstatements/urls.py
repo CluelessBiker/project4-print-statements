@@ -23,6 +23,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name='blog_urls'),
     path('accounts/', include('allauth.urls')),
-    path('prints/', include('artprints.urls')),
+    path('art/', include('artprints.urls')),
     # path('prints/', PrintsPage.as_view(), name='prints'),
 ]

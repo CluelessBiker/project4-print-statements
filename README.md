@@ -167,9 +167,14 @@ Django was then throwing an error, as the CSRF token had been added incorrectly 
 
 After adding a "categories" field to my Artprints model, I then received an error message when trying to migrate the changes, as it was a required field & no default foreignkey was provided. I added a default field, assuming I could name a category, and this in turn caused a whole new string of error messages. After updating the field, I was unable to migrate the changes still, as the error kept persisting. I looked up how to revert the migrations on [Stackoverflow](https://stackoverflow.com/questions/32123477/how-to-revert-the-last-migration) using the following command: ```./manage.py migrate artprints zero```, but this did not resolve the issue. After consulting with a fellow student who had experienced something similar, [Mats Simonsson](https://github.com/Pelikantapeten), I then deleted the files out of the migrations folder within my app folder. As I had not yet pupolated the databases with a significant amount of information, this seemed like a reasonable fix.
 
-Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints".
+Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints". As I was unable to find a solution to resolve this, I changed the path so it would read "/art/prints/" for aesthetics.
 
-The Hero image, and About page image were not loading to the site after deployment to Heroku. These two images were stored directly within the django app as opposed to being uploaded to Cloudinary.
+The Hero image, and About page image were not loading to the site after deployment to Heroku. These two images were stored directly within the django app as opposed to being uploaded to Cloudinary. I tried numerous articles that suggested to change the URL path linked in the CSS file, and tried the following:
+- ```background: url(/static/images/gallery-wall.jpg) no-repeat;```
+- ```background: url('{% static "/images/gallery-wall.jpg" %}') no-repeat;```
+- ```background: url('{% static "images/gallery-wall.jpg" %}') no-repeat;```
+- ```background: url("{{ STATIC_URL }}images/gallery-wall.jpg") no-repeat;```
+As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resolrted to loading the images directly into the HTML files as opposed to the CSS.
 
 
 ### Validator Testing
