@@ -169,6 +169,8 @@ After adding a "categories" field to my Artprints model, I then received an erro
 
 Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints".
 
+The Hero image, and About page image were not loading to the site after deployment to Heroku. These two images were stored directly within the django app as opposed to being uploaded to Cloudinary.
+
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
