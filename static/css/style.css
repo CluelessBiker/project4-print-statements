@@ -1,3 +1,4 @@
+{% load static %}
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,900;1,100;1,200&family=Permanent+Marker&family=Play:wght@400;700&family=Shadows+Into+Light+Two&display=swap');
 
 h1, h2, h3 {
@@ -66,7 +67,8 @@ h3 {
     height: 600px;
     margin: 0 auto;
     /* background: url(../images/gallery-wall.jpg) no-repeat; */
-    background: url(/static/images/gallery-wall.jpg) no-repeat;
+    /* background: url(/static/images/gallery-wall.jpg) no-repeat; */
+    background: url('{% static "/images/gallery-wall.jpg" %}') no-repeat;
     background-size: 100%;
     background-position-x: 0px;
     background-position-y: -717px;
@@ -107,7 +109,8 @@ h3 {
     height: 600px;
     margin: 0 auto;
     /* background: url(../images/three-frames.jpg) no-repeat; */
-    background: url(/static/images/three-frames.jpg) no-repeat;
+    /* background: url(/static/images/three-frames.jpg) no-repeat; */
+    background: url('{% static "/images/three-frames.jpg" %}') no-repeat;
     background-size: 100%;
     contain: content;
 }
