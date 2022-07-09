@@ -111,10 +111,9 @@ Not all stories have been implemented. Some have been left for future implementa
 
 ### Typography:
 All fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
-1. 
-2. 
-3. 
-4. 
+1. Kanit: Site heading/logo, Blog & print titles
+2. Permanent Marker: site navigation & site buttons
+3. Shadows Into Light Two: all remaining site text
 
 ### Imagery:
 All photography for the fictional "artists" was supplied by me.
@@ -167,6 +166,8 @@ After installing **crispy-forms**, an "Invalid syntx" error was displaying in th
 Django was then throwing an error, as the CSRF token had been added incorrectly to the form field.
 
 After adding a "categories" field to my Artprints model, I then received an error message when trying to migrate the changes, as it was a required field & no default foreignkey was provided. I added a default field, assuming I could name a category, and this in turn caused a whole new string of error messages. After updating the field, I was unable to migrate the changes still, as the error kept persisting. I looked up how to revert the migrations on [Stackoverflow](https://stackoverflow.com/questions/32123477/how-to-revert-the-last-migration) using the following command: ```./manage.py migrate artprints zero```, but this did not resolve the issue. After consulting with a fellow student who had experienced something similar, [Mats Simonsson](https://github.com/Pelikantapeten), I then deleted the files out of the migrations folder within my app folder. As I had not yet pupolated the databases with a significant amount of information, this seemed like a reasonable fix.
+
+Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints".
 
 
 ### Validator Testing
