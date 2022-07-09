@@ -67,7 +67,7 @@ h3 {
     margin: 0 auto;
     /* background: url(../images/gallery-wall.jpg) no-repeat; */
     /* background: url(/static/images/gallery-wall.jpg) no-repeat; */
-    background: url("{{ STATIC_URL }}images/gallery-wall.jpg") no-repeat;
+    background: url('{% static "images/gallery-wall.jpg" %}') no-repeat;
     background-size: 100%;
     background-position-x: 0px;
     background-position-y: -717px;
@@ -109,7 +109,7 @@ h3 {
     margin: 0 auto;
     /* background: url(../images/three-frames.jpg) no-repeat; */
     /* background: url(/static/images/three-frames.jpg) no-repeat; */
-    background: url("{{ STATIC_URL }}images/three-frames.jpg") no-repeat;
+    background: url('{% static "images/three-frames.jpg" %}') no-repeat;
     background-size: 100%;
     contain: content;
 }
