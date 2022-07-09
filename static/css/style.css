@@ -61,7 +61,7 @@ h3 {
 }
 
 /* HERO IMAGE */
-.hero-page {
+/* .hero-page {
     width: 90%;
     height: 600px;
     margin: 0 auto;
@@ -70,6 +70,20 @@ h3 {
     background-position-x: 0px;
     background-position-y: -717px;
     contain: content;
+} */
+
+.hero-page {
+    width: 90%;
+    height: 600px;
+    margin: 0 auto;
+    contain: content;
+}
+
+.hero-page img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: -500px;
 }
 
 /* SOCIAL LINKS */
@@ -102,13 +116,13 @@ h3 {
     margin: auto;
 }
 
-.about-image {
+/* .about-image {
     height: 600px;
     margin: 0 auto;
     background: url(../images/three-frames.jpg) no-repeat;
     background-size: 100%;
     contain: content;
-}
+} */
 
 .about-page h2 {
     font-family: 'Kanit', sans-serif;
@@ -330,8 +344,11 @@ h3 {
         padding: 5px 38px;
     }
 
-    .hero-page {
+    /* .hero-page {
         background-position-y: -265px;
+    } */
+    .hero-page img {
+        top: -323px;
     }
     
     /* BLOG PAGE */
@@ -368,7 +385,11 @@ h3 {
     /* HERO IMAGE */
     .hero-page {
         height: 400px;
-        background-position-y: -250px;
+        /* background-position-y: -250px; */
+    }
+
+    .hero-page img {
+        top: -170px;
     }
 
     /* ABOUT PAGE */
@@ -438,7 +459,11 @@ h3 {
     /* HERO IMAGE */
     .hero-page {
         height: 307px;
-        background-position-y: -25px;
+        /* background-position-y: -25px; */
+    }
+
+    .hero-page img {
+        top: -25px;
     }
 
     /* ABOUT PAGE */
