@@ -23,16 +23,16 @@ class PrintDetails(View):
     """
     def get(self, request, *args, **kwargs):
         queryset = ArtPrint.objects.filter(status=1)
-        print = get_object_or_404(queryset, slug=slug)
+        artprint = get_object_or_404(queryset, slug=slug)
         liked = False
-        if print.likes.filter(id=self.request.user.id).exists():
+        if artprint.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
             'print-details.html',
             {
-                'print': print,
+                'artprint': artprint,
                 'liked': liked
             }
         )

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="col-12 blog-print-posts-area">
+    <!-- TITLE & IMAGE -->
+    <div class="row print-display">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <div class="image-container">
+                        <img class="card-img-top" src="{{ print.artwork_image.url }}" alt="{{ print.print_name }}">
+                    </div>
+                    <hr />
+                    <h2>{{ print.print_name }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRINT DETAILS -->
+    <div class="row print-display">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <p>Artist: {{ print.artist }}</p>
+                    <hr />
+                    <p>remaining copies: {{ print.remaining_copies }}/{{ print.print_run }}</p>
+                    <p>Price: €{{ print.price }}</p>
+                    <p>Dimensions: W {{ print.print_width }}cm x H {{ print.pirnt_height }}cm</p>
+                    <p>Style: {{ print.category }}</p>
+                    <p>Description: {{ print.description | safe }}</p>
+                    <!-- POST LIKES -->
+                    <div class="col-2 likes-comments">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" , name="blogpost_id" value="{{ post.slug }}"
+                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ post.number_of_likes }}</button>
+                                {% else %}
+                                <button type="submit" , name="blogpost_id" value="{{ post.slug }}" class="like-button"><i
+                                        class="far fa-heart"></i> {{ post.number_of_likes }}</button>
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+                            <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                            {% endif %}
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
