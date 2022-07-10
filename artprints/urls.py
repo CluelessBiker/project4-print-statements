@@ -7,4 +7,5 @@ from . import views
 
 urlpatterns = [
     path('prints/', views.PrintsPage.as_view(), name='prints'),
+    path('<slug:slug>/', views.PrintDetails.as_view(), name='print-detail'),
 ]
