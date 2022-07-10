@@ -21,18 +21,18 @@ class PrintDetails(View):
     Render the individual print
     to the browser.
     """
-    def get(self, request, *args, **kwargs):
+    def get(self, request, slug, *args, **kwargs):
         queryset = ArtPrint.objects.filter(status=1)
-        artprint = get_object_or_404(queryset, slug=slug)
+        print = get_object_or_404(queryset, slug=slug)
         liked = False
-        if artprint.likes.filter(id=self.request.user.id).exists():
+        if print.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
             'print-details.html',
             {
-                'artprint': artprint,
+                'print': print,
                 'liked': liked
             }
         )
