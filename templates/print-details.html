@@ -32,23 +32,23 @@
                     <p>Dimensions: W {{ print.print_width }}cm x H {{ print.pirnt_height }}cm</p>
                     <p>Style: {{ print.category }}</p>
                     <p>Description: {{ print.description | safe }}</p>
-                    <!-- POST LIKES -->
+                    <!-- PRINT LIKES -->
                     <div class="col-2 likes-comments">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'like_print' print.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" , name="blogpost_id" value="{{ post.slug }}"
-                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ post.number_of_likes }}</button>
+                                <button type="submit" , name="artprint_id" value="{{ print.slug }}"
+                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ print.number_of_likes }}</button>
                                 {% else %}
-                                <button type="submit" , name="blogpost_id" value="{{ post.slug }}" class="like-button"><i
-                                        class="far fa-heart"></i> {{ post.number_of_likes }}</button>
+                                <button type="submit" , name="artprint_id" value="{{ print.slug }}" class="like-button"><i
+                                        class="far fa-heart"></i> {{ print.number_of_likes }}</button>
                                 {% endif %}
                             </form>
 
                             {% else %}
-                            <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                            <strong class="text-secondary"><i class="far fa-heart"></i> {{ print.number_of_likes }} </strong>
                             {% endif %}
                         </strong>
                     </div>

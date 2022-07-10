@@ -1,8 +1,9 @@
 """
 Functions for the view code
 """
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import ArtPrint
 
 
@@ -36,3 +37,24 @@ class PrintDetails(View):
                 'liked': liked
             }
         )
+
+
+# Class used from "I think therefore I blog" walkthrough.
+class LikeArtPrint(View):
+    """
+    Allow a user to like an
+    art print submission
+    """
+    def post(self, request, slug):
+        """
+        Check for user.
+        And like/unlike a post
+        """
+        print = get_object_or_404(BlogPost, slug=slug)
+
+        if print.likes.filter(id=request.user.id).exists():
+            print.likes.remove(request.user)
+        else:
+            print.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('print_detail', args=[slug]))
