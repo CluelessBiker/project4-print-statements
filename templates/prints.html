@@ -15,7 +15,7 @@
                             <p>Artist: {{ print.artist }}</p>
                         </div>
                     </div>
-                    <a href="#" class="print-link">
+                    <a href="{% url 'print-detail' print.slug %}" class="print-link">
                         <h2>{{ print.print_name }}</h2>
                     </a>
                     <hr />

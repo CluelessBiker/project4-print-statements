@@ -170,11 +170,12 @@ After adding a "categories" field to my Artprints model, I then received an erro
 Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints". As I was unable to find a solution to resolve this, I changed the path so it would read "/art/prints/" for aesthetics.
 
 The Hero image, and About page image were not loading to the site after deployment to Heroku. These two images were stored directly within the django app as opposed to being uploaded to Cloudinary. I tried numerous articles that suggested to change the URL path linked in the CSS file, and tried the following:
-- ```background: url(/static/images/gallery-wall.jpg) no-repeat;```
-- ```background: url('{% static "/images/gallery-wall.jpg" %}') no-repeat;```
+- ```background: url(/static/images/gallery-wall.jpg) no-repeat;``` : As shown in [Simpleit](https://simpleit.rocks/python/django/call-static-templatetag-for-background-image-in-css/)
+- ```background: url('{% static "/images/gallery-wall.jpg" %}') no-repeat;``` : As showing in [Stackoverflow](https://stackoverflow.com/questions/5898776/how-to-refer-to-static-files-in-my-css-files)
 - ```background: url('{% static "images/gallery-wall.jpg" %}') no-repeat;```
 - ```background: url("{{ STATIC_URL }}images/gallery-wall.jpg") no-repeat;```
-As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resolrted to loading the images directly into the HTML files as opposed to the CSS.
+- ```background: url(static("images/gallery-wall.jpg"));```
+As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resolrted to loading the images directly into the HTML files as opposed to the CSS. 
 
 
 ### Validator Testing
