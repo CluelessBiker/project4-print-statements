@@ -4,36 +4,36 @@
 
 {% load crispy_forms_tags %}
 
-<div class="col-12 blog-print-posts-area">
+<div class="col-12 single-print-area">
     <!-- TITLE & IMAGE -->
-    <div class="row print-display">
-        <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="row">
+        <div class="col-sm-6">
             <div class="card mb-4">
-                <div class="card-body all-prints-cards">
+                <div class="card-body single-print-card">
+                    <h2>{{ print.print_name }}</h2>
+                    <hr />
                     <div class="image-container">
                         <img class="card-img-top" src="{{ print.artwork_image.url }}" alt="{{ print.print_name }}">
                     </div>
-                    <hr />
-                    <h2>{{ print.print_name }}</h2>
                 </div>
             </div>
         </div>
-    </div>
+
 
     <!-- PRINT DETAILS -->
-    <div class="row print-display">
-        <div class="col-sm-6 col-md-4 col-lg-3">
+
+        <div class="col-sm-6">
             <div class="card mb-4">
-                <div class="card-body all-prints-cards">
+                <div class="card-body single-print-card">
                     <p>Artist: {{ print.artist }}</p>
                     <hr />
                     <p>remaining copies: {{ print.remaining_copies }}/{{ print.print_run }}</p>
                     <p>Price: €{{ print.price }}</p>
-                    <p>Dimensions: W {{ print.print_width }}cm x H {{ print.pirnt_height }}cm</p>
+                    <p>Dimensions: W {{ print.print_width }}cm x H {{ print.print_height }}cm</p>
                     <p>Style: {{ print.category }}</p>
                     <p>Description: {{ print.description | safe }}</p>
                     <!-- PRINT LIKES -->
-                    <div class="col-2 likes-comments">
+                    <div class="likes-comments">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'like_print' print.slug %}" method="POST">
@@ -48,7 +48,7 @@
                             </form>
 
                             {% else %}
-                            <strong class="text-secondary"><i class="far fa-heart"></i> {{ print.number_of_likes }} </strong>
+                            <p><strong class="text-secondary"><i class="far fa-heart"></i> {{ print.number_of_likes }}</strong></p>
                             {% endif %}
                         </strong>
                     </div>

@@ -314,3 +314,102 @@
             </div>
         </div>
     </div>
+
+<!-- NEXT VERSION -->
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- ALL BLOG ENTRIES -->
+<div class="col-12 mt-3 blog-posts-area">
+    <div class="row post-row">
+        {% for post in blogpost_list %}
+        {% if forloop.counter == 1 %}
+        <div class="main-posts">
+            <div class="all-posts-post-box">
+                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                </a>
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="default image">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                {% endif %}
+                <div>
+                    <br>
+                    <h3>Author: {{ post.author }}</h3>
+                    <p>{{ post.excerpt }}</p>
+                    <p>{{ post.created_on}}</p>
+                    <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% elif forloop.counter == 2 %}
+        <div class="left-posts">
+            <div class="all-posts-post-box">
+                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                </a>
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="default image">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                {% endif %}
+                <div>
+                    <br>
+                    <h3>Author: {{ post.author }}</h3>
+                    <p>{{ post.excerpt }}</p>
+                    <p>{{ post.created_on}}</p>
+                    <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="right-posts">
+            <div class="all-posts-post-box">
+                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                </a>
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="default image">
+                {% else %}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                {% endif %}
+                <div>
+                    <br>
+                    <h3>Author: {{ post.author }}</h3>
+                    <p>{{ post.excerpt }}</p>
+                    <p>{{ post.created_on}}</p>
+                    <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div class="row next-prev-button">
+        {% if is_paginated %}
+        <div>
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">
+                <button class="pagination-button">PREV</button>
+            </a>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">
+                <button class="pagination-button">NEXT</button>
+            </a>
+            {% endif %}
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+
+{%endblock%}

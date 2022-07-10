@@ -2,66 +2,71 @@
 
 {% block content %}
 <!-- ALL BLOG ENTRIES -->
-<div class="col-12 mt-3 blog-print-posts-area">
+<div class="col-12 blog-posts-area">
     <div class="row post-row">
         {% for post in blogpost_list %}
         {% if forloop.counter == 1 %}
-        <div class="main-posts">
-            <div class="all-posts-post-box">
-                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                </a>
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    alt="default image">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                {% endif %}
-                <div>
-                    <br>
-                    <h3>Author: {{ post.author }}</h3>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 main-posts">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <div class="image-container all-blog-images">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="default image">
+                        {% else %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                    </a>
+                    <hr />
+                    <p>Author: {{ post.author }}</p>
                     <p>{{ post.excerpt }}</p>
                     <p>{{ post.created_on}}</p>
                     <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                 </div>
             </div>
         </div>
+
         {% elif forloop.counter == 2 %}
-        <div class="left-posts">
-            <div class="all-posts-post-box">
-                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                </a>
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    alt="default image">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                {% endif %}
-                <div>
-                    <br>
-                    <h3>Author: {{ post.author }}</h3>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 left-posts">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <div class="image-container all-blog-images">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="default image">
+                        {% else %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                    </a>
+                    <hr />
+                    <p>Author: {{ post.author }}</p>
                     <p>{{ post.excerpt }}</p>
                     <p>{{ post.created_on}}</p>
                     <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                 </div>
             </div>
         </div>
+
         {% else %}
-        <div class="right-posts">
-            <div class="all-posts-post-box">
-                <a href="{% url 'blog_post' post.slug  %}" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                </a>
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                    alt="default image">
-                {% else %}
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                {% endif %}
-                <div>
-                    <br>
-                    <h3>Author: {{ post.author }}</h3>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 right-posts">
+            <div class="card mb-4">
+                <div class="card-body all-prints-cards">
+                    <div class="image-container all-blog-images">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="default image">
+                        {% else %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'blog_post' post.slug  %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                    </a>
+                    <hr />
+                    <p>Author: {{ post.author }}</p>
                     <p>{{ post.excerpt }}</p>
                     <p>{{ post.created_on}}</p>
                     <p><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>

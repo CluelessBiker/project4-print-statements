@@ -50,7 +50,7 @@ class LikeArtPrint(View):
         Check for user.
         And like/unlike a post
         """
-        print = get_object_or_404(BlogPost, slug=slug)
+        print = get_object_or_404(ArtPrint, slug=slug)
 
         if print.likes.filter(id=request.user.id).exists():
             print.likes.remove(request.user)
