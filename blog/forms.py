@@ -2,7 +2,6 @@
 Comments form, allowing users to
 comment on blog posts
 """
-
 from .models import BlogComment
 from django import forms
 

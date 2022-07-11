@@ -288,6 +288,8 @@ I implemented the use of the Bootstrap [Dropdown](https://getbootstrap.com/docs/
 
 How to link URLS from multiple apps came from this post on [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps)
 
+How to add a form label cam from [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields).
+
 
 ### Media
 - All photography displayed in the Artists gallery was created by me.
