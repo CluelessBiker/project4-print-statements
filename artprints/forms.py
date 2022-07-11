@@ -26,7 +26,7 @@ class SubmitPrintForm(forms.ModelForm):
             'remaining_copies',
             'price',
         )
-        label = {
+        labels = {
             'print_name': 'Title',
             'description': 'Description',
             'category': 'Category',
