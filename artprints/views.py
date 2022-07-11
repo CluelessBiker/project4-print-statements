@@ -30,7 +30,7 @@ def submit_art_print(request):
             submission_form.save()
             messages.success(
                 request,
-                'Fantaastic! Please wait whilst we approve your submission.')
+                'Fantastic! Please wait whilst we approve your submission.')
             return redirect('prints')
 
     return render(
@@ -44,6 +44,7 @@ def submit_art_print(request):
 #     if request.method == 'POST':
 #         form = SubmitPrintForm(request.POST)
 #         if form.is_valid():
+#             form.save()
 #             return redirect('prints')
 #     form = SubmitPrintForm()
 #     context = {
