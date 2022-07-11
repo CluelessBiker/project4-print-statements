@@ -59,3 +59,10 @@ class LikeArtPrint(View):
             print.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('print_detail', args=[slug]))
+
+
+def submit_art_print(request):
+    """
+    View for print submission page.
+    """
+    return render(request, 'submit-print.html')
