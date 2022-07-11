@@ -270,25 +270,16 @@ python3 manage.py migrate
 ## Credits
 
 ### Content
-Support was provided by my fellow student & friend [Mats Simonsson](https://github.com/Pelikantapeten).
-
-Also a huge thank you to my mentor, [Martina Terlevic](https://github.com/SephTheOverwitch).
-
-The initial setup and deployment of this project was done by following the “I think therefore I blog” walkthrough.
-
-In addition to this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
-
-With the assistance of Sean at Tutor Support, I was able to add an if statement to my blog page that signled out the most recent blog post. They were very patient with me as I tried to be coherent and explain why I was stuck.
-
-When encountering an error message that I could not decipher, let alone solve, I reached out to Tutor support, and Ger instantly pointed me in the right direction. This is my third encounter with this person over the course of my all my projects, and each time, they have been an invaluable help. 
-
-The following Article on ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html), provided some insight into how to create different types of user groups.
-
-I implemented the use of the Bootstrap [Dropdown](https://getbootstrap.com/docs/5.2/components/dropdowns/) for use in the nav bar, used to clean up the look of the site when viewing it on a mobile device.
-
-How to link URLS from multiple apps came from this post on [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps)
-
-How to add a form label cam from [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields).
+- [Mats Simonsson](https://github.com/Pelikantapeten): A fellow student & friend who consistently helps me to troubleshoot when needed, and be my rubber duck.
+- [Martina Terlevic](https://github.com/SephTheOverwitch): A constant support system, providing reassurance, and the ability to calm me down.
+- “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site, as well as this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
+- Sean from Tutor Support: Singling out the most recent blog post with an "IF statement".
+- Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database resolved this.
+- ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html): creating types of user groups
+- [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu
+- [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps): connect URL paths from multiple apps
+- [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields): add form label
+- [Stackoverflow](https://stackoverflow.com/questions/3111779/how-can-i-get-the-file-name-from-request-files): iterating over form field
 
 
 ### Media
@@ -297,9 +288,9 @@ How to add a form label cam from [Stackoverflow](https://stackoverflow.com/quest
 
 ##### Pexels stock images:
 <!-- - unused, Photo by [Barbara Wyrowińska](https://www.pexels.com/photo/green-photo-frame-2961734/) -->
-- Hero image, Photo by [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
-- About page, Photo by [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
-- Default blog post image, by [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
+- Hero image, Photo by: [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
+- About page, Photo by: [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
+- Default blog post image, by: [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
 
 DATA SETS:
 Sign-up - visitor:

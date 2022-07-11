@@ -1,5 +1,5 @@
 """
-Generate a form to allow signed-in users 
+Generate a form to allow signed-in users
 to submit new artworks.
 """
 from django import forms

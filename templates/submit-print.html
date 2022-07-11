@@ -1,27 +1,26 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 {% load crispy_forms_tags %}
+{% load cloudinary %}
 
-<h1>WHAT?!</h1>
-
+<div class="col-12 art-prints-area">
 <!-- NEW PRINT SUBMISSION FIELD -->
-{% if user.is_authenticated %}
-<div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card mb-4">
-        <div class="card-body all-prints-cards">
-            <h2>Submit your print:<h2></h2>
-            <hr />
-            <p>just click the button</p>
-            <form method="POST"  action="add" style="margin-top: 1.3em;">
-                {{ submission_form | crispy }}
-                {% csrf_token %}
-            </form>
-            <button type="submit" class="submit-print-button">Submit</button>
+    {% if user.is_authenticated %}
+    <div class="col-sm-6">
+        <div class="card mb-4">
+            <div class="card-body all-prints-cards">
+                <h2>Submit your print:<h2></h2>
+                <hr />
+                <p>just click the button</p>
+                <form method="POST" action="add" style="margin-top: 1.3em;">
+                    {{ submission_form | crispy }}
+                    {% csrf_token %}
+                </form>
+                <button type="submit" class="submit-print-button">Submit</button>
+            </div>
         </div>
     </div>
+    {% endif %}
 </div>
-{% endif %}
 
 {%endblock%}
