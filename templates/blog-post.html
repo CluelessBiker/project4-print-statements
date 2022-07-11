@@ -85,6 +85,7 @@
         <div class="row">
             <!-- SUBMIT COMMENT -->
             <!-- card modified from django walkthrough -->
+            {% if user.is_authenticated %}
             <div class="card col-md-11 single-post-comments">
                 <div class="card-body">
                     {% if commented %}
@@ -92,7 +93,7 @@
                         Please wait whilst your comment is approved.
                     </div>
                     {% else %}
-                    {% if user.is_authenticated %}
+                    
                     <h3>Add your two cents:</h3>
                     <form method="POST" style="margin-top: 1.3em;">
                         {{ comment_form | crispy }}
@@ -100,9 +101,11 @@
                         <button type="submit" class="submit-comment-button">Submit</button>
                     </form>
                     {% endif %}
-                    {% endif %}
                 </div>
+            {% else %}
+                <div></div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
