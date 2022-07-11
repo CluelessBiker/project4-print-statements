@@ -18,6 +18,20 @@ class PrintsPage(generic.ListView):
     paginate_by = 12
 
 
+def submit_art_print(request):
+    """
+    View for print submission page.
+    """
+    # return render(request, 'submit-print.html')
+    return render(
+        request, 
+        'submit-print.html',
+        {
+            'submission_form': SubmitPrintForm()
+        },
+    )
+
+
 class PrintDetails(View):
     """
     Render the individual print
@@ -35,9 +49,12 @@ class PrintDetails(View):
             'print-details.html',
             {
                 'print': print,
-                'liked': liked
+                'liked': liked,
             }
         )
+
+
+
 
 
 # Class used from "I think therefore I blog" walkthrough.
@@ -59,10 +76,3 @@ class LikeArtPrint(View):
             print.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('print_detail', args=[slug]))
-
-
-def submit_art_print(request):
-    """
-    View for print submission page.
-    """
-    return render(request, 'submit-print.html')
