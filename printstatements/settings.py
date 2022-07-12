@@ -96,6 +96,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'printstatements.wsgi.application'
 
 

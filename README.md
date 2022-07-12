@@ -276,12 +276,13 @@ python3 manage.py migrate
 - “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site, as well as this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
 - Sean from Tutor Support: Singling out the most recent blog post with an "IF statement".
 - Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database resolved this.
+- Ger from Tutor support: limiting view sections to a single user
 - ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html): creating types of user groups
 - [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu
 - [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps): connect URL paths from multiple apps
 - [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields): add form label
 - [Stackoverflow](https://stackoverflow.com/questions/3111779/how-can-i-get-the-file-name-from-request-files): iterating over form field
-
+- [Stackoverflow](https://stackoverflow.com/questions/23956288/django-all-auth-email-required): Allauth email sign up required.
 
 ### Media
 - All photography displayed in the Artists gallery was created by me.
