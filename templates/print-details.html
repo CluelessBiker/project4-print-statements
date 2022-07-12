@@ -10,10 +10,10 @@
         <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body single-print-card">
-                    <h2>{{ print.print_name }}</h2>
+                    <h2>{{ prints.print_name }}</h2>
                     <hr />
                     <div class="image-container">
-                        <img class="card-img-top" src="{{ print.artwork_image.url }}" alt="{{ print.print_name }}">
+                        <img class="card-img-top" src="{{ prints.artwork_image.url }}" alt="{{ prints.print_name }}">
                     </div>
                 </div>
             </div>
@@ -25,35 +25,35 @@
         <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body single-print-card">
-                    <p>Artist: {{ print.artist }}</p>
+                    <p>Artist: {{ prints.artist }}</p>
                     <hr />
-                    <p>remaining copies: {{ print.remaining_copies }}/{{ print.print_run }}</p>
-                    <p>Price: €{{ print.price }}</p>
-                    <p>Dimensions: W {{ print.print_width }}cm x H {{ print.print_height }}cm</p>
-                    <p>Style: {{ print.category }}</p>
-                    <p>Description: {{ print.description | safe }}</p>
+                    <p>remaining copies: {{ prints.remaining_copies }}/{{ prints.print_run }}</p>
+                    <p>Price: €{{ prints.price }}</p>
+                    <p>Dimensions: W {{ prints.print_width }}cm x H {{ prints.print_height }}cm</p>
+                    <p>Style: {{ prints.category }}</p>
+                    <p>Description: {{ prints.description | safe }}</p>
                     <!-- PRINT LIKES -->
                     <div class="likes-comments">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'like_print' print.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'like_print' prints.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" , name="artprint_id" value="{{ print.slug }}"
-                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ print.number_of_likes }}</button>
+                                <button type="submit" , name="artprint_id" value="{{ prints.slug }}"
+                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ prints.number_of_likes }}</button>
                                 {% else %}
-                                <button type="submit" , name="artprint_id" value="{{ print.slug }}" class="like-button"><i
-                                        class="far fa-heart"></i> {{ print.number_of_likes }}</button>
+                                <button type="submit" , name="artprint_id" value="{{ prints.slug }}" class="like-button"><i
+                                        class="far fa-heart"></i> {{ prints.number_of_likes }}</button>
                                 {% endif %}
                             </form>
 
                             {% else %}
-                            <p><strong class="text-secondary"><i class="far fa-heart"></i> {{ print.number_of_likes }}</strong></p>
+                            <p><strong class="text-secondary"><i class="far fa-heart"></i> {{ prints.number_of_likes }}</strong></p>
                             {% endif %}
 
-                            {% if request.user == print.artist %}
+                            {% if request.user == prints.artist %}
                             <hr>
-                            <a href="#">
+                            <a href="{% url 'edit_print' prints.slug %}">
                                 <button class="edit-delete-button">EDIT</button>
                             </a>
                             <a href="#">

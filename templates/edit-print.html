@@ -13,7 +13,7 @@
                     <h2>Edit your print:<h2></h2>
                     <hr />
                     <form method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
-                        {{ submission_form | crispy }}
+                        {{ edit_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="submit-print-button">Submit Changes</button>
                     </form>

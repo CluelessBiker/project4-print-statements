@@ -44,29 +44,30 @@ def submit_art_print(request):
     )
 
 
-# class PrintDetails(View):
-#     """
-#     Render the individual print
-#     to the browser.
-#     """
-#     def get(self, request, slug, *args, **kwargs):
-#         """
-#         Obtain print & check for likes.
-#         """
-#         queryset = ArtPrint.objects.filter(status=1)
-#         prints = get_object_or_404(queryset, slug=slug)
-#         liked = False
-#         if prints.likes.filter(id=self.request.user.id).exists():
-#             liked = True
+def edit_art_print(request, slug):
+    """
+    Edit a submitted artprint
+    """
+    prints = get_object_or_404(ArtPrint, slug=slug)
+    edit_form = SubmitPrintForm(request.POST or None, instance=prints)
+    context = {
+        'edit_form': edit_form,
+        'prints': prints
+    }
 
-#         return render(
-#             request,
-#             'print-details.html',
-#             {
-#                 'prints': prints,
-#                 'liked': liked,
-#             }
-#         )
+    if request.method == 'POST':
+        edit_form = SubmitPrintForm(request.POST, request.FILES, instance=prints)
+        if edit_form.is_valid():
+            prints = edit_form.save(commit=False)
+            prints.artist = request.user
+            prints.save()
+            return redirect('prints')
+    else:
+        edit_form = SubmitPrintForm(instance=prints)
+    
+    return render(request, 'edit-print.html', context)
+
+
 class PrintDetails(View):
     """
     Render the individual print
@@ -77,16 +78,17 @@ class PrintDetails(View):
         Obtain print & check for likes.
         """
         queryset = ArtPrint.objects.filter(status=1)
-        print = get_object_or_404(queryset, slug=slug)
+        prints = get_object_or_404(queryset, slug=slug)
         liked = False
-        if print.likes.filter(id=self.request.user.id).exists():
+        if prints.likes.filter(id=self.request.user.id).exists():
             liked = True
+
         return render(
             request,
             'print-details.html',
             {
-                'print': print,
-                'liked': liked
+                'prints': prints,
+                'liked': liked,
             }
         )
 
