@@ -56,7 +56,7 @@
                             <a href="{% url 'edit_print' prints.slug %}">
                                 <button class="edit-delete-button">EDIT</button>
                             </a>
-                            <a href="#">
+                            <a href="{% url 'delete_print' prints.slug %}">
                                 <button class="edit-delete-button">DELETE</button>
                             </a>
                             {% endif %}
