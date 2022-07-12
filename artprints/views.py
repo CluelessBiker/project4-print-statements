@@ -29,9 +29,6 @@ def submit_art_print(request):
         if submission_form.is_valid():
             submission_form.instance.artist = request.user
             submission_form.save()
-            # messages.success(
-            #     request,
-            #     'Fantastic! Please wait whilst we approve your submission.')
             return redirect('prints')
         else:
             print("ERROR")
@@ -45,36 +42,31 @@ def submit_art_print(request):
             'submission_form': SubmitPrintForm(),
         },
     )
-# def submit_art_print(request):
-#     if request.method == 'POST':
-#         form = SubmitPrintForm(request.POST, request.FILES)
-#         form.instance.artist = request.user
-#         if form.is_valid():
-#             form.save()
-#             return redirect('prints')
-#         else:
-#             print("NOT THIS TIME")
-#             print(form.errors)
-#     form = SubmitPrintForm()
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'submit-print.html', context)
-# def submit_art_print(request):
-#     if request.method == 'POST':
-#         form = SubmitPrintForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.instance.artist = request.user
-#             form.save()
-#             return redirect('prints')
-#     form = SubmitPrintForm()
-#     context = {
-#         'form': form
-#     }
-
-#     return render(request, 'submit-print.html', context)
 
 
+# class PrintDetails(View):
+#     """
+#     Render the individual print
+#     to the browser.
+#     """
+#     def get(self, request, slug, *args, **kwargs):
+#         """
+#         Obtain print & check for likes.
+#         """
+#         queryset = ArtPrint.objects.filter(status=1)
+#         prints = get_object_or_404(queryset, slug=slug)
+#         liked = False
+#         if prints.likes.filter(id=self.request.user.id).exists():
+#             liked = True
+
+#         return render(
+#             request,
+#             'print-details.html',
+#             {
+#                 'prints': prints,
+#                 'liked': liked,
+#             }
+#         )
 class PrintDetails(View):
     """
     Render the individual print
@@ -85,17 +77,16 @@ class PrintDetails(View):
         Obtain print & check for likes.
         """
         queryset = ArtPrint.objects.filter(status=1)
-        prints = get_object_or_404(queryset, slug=slug)
+        print = get_object_or_404(queryset, slug=slug)
         liked = False
-        if prints.likes.filter(id=self.request.user.id).exists():
+        if print.likes.filter(id=self.request.user.id).exists():
             liked = True
-
         return render(
             request,
             'print-details.html',
             {
-                'prints': prints,
-                'liked': liked,
+                'print': print,
+                'liked': liked
             }
         )
 

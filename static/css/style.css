@@ -311,7 +311,8 @@ h3 {
 .login-register-button,
 .pagination-button,
 .submit-comment-button,
-.submit-print-button {
+.submit-print-button,
+.edit-delete-button {
     background: #1A313C;
     border-radius: 4px;
     border: none;

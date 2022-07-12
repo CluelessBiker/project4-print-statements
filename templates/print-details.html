@@ -50,6 +50,16 @@
                             {% else %}
                             <p><strong class="text-secondary"><i class="far fa-heart"></i> {{ print.number_of_likes }}</strong></p>
                             {% endif %}
+
+                            {% if request.user == print.artist %}
+                            <hr>
+                            <a href="#">
+                                <button class="edit-delete-button">EDIT</button>
+                            </a>
+                            <a href="#">
+                                <button class="edit-delete-button">DELETE</button>
+                            </a>
+                            {% endif %}
                         </strong>
                     </div>
                 </div>
