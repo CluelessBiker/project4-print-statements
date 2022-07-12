@@ -24,14 +24,19 @@ def submit_art_print(request):
     View for print submission page.
     """
     if request.method == 'POST':
+        # breakpoint()
         submission_form = SubmitPrintForm(request.POST, request.FILES)
         if submission_form.is_valid():
             submission_form.instance.artist = request.user
             submission_form.save()
-            messages.success(
-                request,
-                'Fantastic! Please wait whilst we approve your submission.')
+            # messages.success(
+            #     request,
+            #     'Fantastic! Please wait whilst we approve your submission.')
             return redirect('prints')
+        else:
+            print("ERROR")
+            print(submission_form.errors)
+            submission_form = SubmitPrintForm()
 
     return render(
         request,
@@ -42,14 +47,31 @@ def submit_art_print(request):
     )
 # def submit_art_print(request):
 #     if request.method == 'POST':
-#         form = SubmitPrintForm(request.POST)
+#         form = SubmitPrintForm(request.POST, request.FILES)
+#         form.instance.artist = request.user
 #         if form.is_valid():
+#             form.save()
+#             return redirect('prints')
+#         else:
+#             print("NOT THIS TIME")
+#             print(form.errors)
+#     form = SubmitPrintForm()
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'submit-print.html', context)
+# def submit_art_print(request):
+#     if request.method == 'POST':
+#         form = SubmitPrintForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.instance.artist = request.user
 #             form.save()
 #             return redirect('prints')
 #     form = SubmitPrintForm()
 #     context = {
 #         'form': form
 #     }
+
 #     return render(request, 'submit-print.html', context)
 
 

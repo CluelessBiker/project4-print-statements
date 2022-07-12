@@ -12,7 +12,7 @@
                 <h2>Submit your print:<h2></h2>
                 <hr />
                 <p>just click the button</p>
-                <form method="POST" action="submit_print" style="margin-top: 1.3em;">
+                <form method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
                     {{ submission_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="submit-print-button">Submit</button>

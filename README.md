@@ -177,6 +177,7 @@ The Hero image, and About page image were not loading to the site after deployme
 - ```background: url(static("images/gallery-wall.jpg"));```
 As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resolrted to loading the images directly into the HTML files as opposed to the CSS. 
 
+Once the submission form had been created to allow a user to submit a new work of art to the prints gallery, the form would not work. The error messages in the terminal suggested that no file was selected, and thus, the form would not complete. After exhausting my resources, I reached out to tutor support again, and with the assistance of Ger, was informed that ```enctype="multipart/form-data``` needed to be included in the form field. As soon as this was added, the form submitted without issue.
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
