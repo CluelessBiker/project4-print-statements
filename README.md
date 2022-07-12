@@ -52,10 +52,15 @@ With a clean, easy to follow layout, the user - both artist and consumer alike -
 For Artists to easily be able to supply their work to the art world and be discovered by new & old collectors. For Collectors to not only find works by the artists they admire, but to also discover new artists along the way.
 
 ### New User Goals:
-To become instantly engaged with the design of the site, and feel intrigued to play along.
+To become instantly engaged with the design of the site, and feel intrigued to explore all it has to offer.
 
 ### Future Goals:
-To make the works purchasable through the platform directly.
+- To create a profile page for each artist, which the site users can peruse.
+- To view all the available artwork created by an artist both on their profile page, and by clicking on the artist name when viewing an artwork.
+- To allow users to follow artists directly, and receive email notifications when new works are available for sale.
+- To have an online shop that will make the individual artworks available for sale.
+- For the remaining number of aratworks to be instantly displayed on the prints page under "remaining prints."
+- To provide access for the artists to not only select the number of limited edition prints they would like to sell, but also choose the size of the work, along with the medium on which is is printed (canvas, glossy print, mat, etc...)
 
 ## User Stories
 Not all stories have been implemented. Some have been left for future implementations as the site grows and expands.
@@ -100,12 +105,25 @@ Not all stories have been implemented. Some have been left for future implementa
 ## Design
 
 ### Wireframes:
+
+##### Home Page: 
+
 ![Desktop Home](static/images-readme/readme-wireframe-homepage.png)
+
+##### Blog Page:
+
 ![Desktop Blog](static/images-readme/readme-wireframe-blogposts.png)
+
+##### Blod Post Details:
+
 ![Desktop Blog Post](static/images-readme/readme-wireframe-blogview.png)
+
+##### Site Navigation:
+
 ![Site Navigation](static/images-readme/readme-wireframe-sitenav.png)
 
 ### Colour Scheme:
+
 ![Colour Palette](static/images-readme/readme-colour-palette.png)
 
 ### Typography:
@@ -115,49 +133,82 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 3. Shadows Into Light Two: all remaining site text
 
 ### Imagery:
-All photography for the fictional "artists" was supplied by me.
+- All photography for the fictional "artists" was supplied by me.
+- Two drawings have also been uploaded, with the consent of the artist. They have been named in the Credits section.
 
 ## Features
 
 ### Existing Features:
 
 #### Home Page:
+
 ![Home page](static/images-readme/readme-homepage.png)
 
 #### Navigation Bar:
-Desktop:
+
+##### Desktop:
+
 ![Navbar desktop](static/images-readme/readme-nav-desktop.png)
 
-Mobile:
+##### Mobile:
+
 ![Navbar mobile](static/images-readme/readme-nav-mobile.png)
 
 #### About Page:
+
 ![About page](static/images-readme/readme-aboutpage.png)
 
 #### Prints Page:
+
 ![Prints Page](static/images-readme/readme-printspage.png)
 
 #### Print Details Page:
+
 ![Print Details Page](static/images-readme/readme-print-details.png)
 
 #### Blog Page:
+
 ![Blog Page](static/images-readme/readme-blog.png)
 
 #### Blog Post Details:
+
 ![Blog Post Details](static/images-readme/readme-blog-post.png)
 
 #### Log in, Log out & Sign up:
-Login:
+
+##### Login:
+
 ![Login](static/images-readme/readme-signin.png)
 
-Logout:
+##### Logout:
+
 ![Logout](static/images-readme/readme-signout.png)
 
-Sign-up:
+##### Sign-up:
+
 ![Sign-up](static/images-readme/readme-signup.png)
 
 #### Social Links:
-![Social Links](static/images-readme/)
+
+![Social Links](static/images-readme/readme-sociallinks.png)
+
+#### C.R.U.D:
+
+##### Create (button):
+- The button to invite you to submit a new artwork will be found on the **"Prints"** page.
+- It is only visible to users who are signed in.
+![CRUD - create button](static/images-readme/readme-c-in-crud.png)
+
+##### Create (form):
+- This page may only be accessed from the button on the **"Prints"** page.
+![CRUD - create form](static/images-readme/readme-c-form.png)
+
+##### Read:
+![CRUD - read](static/images-readme/readme-printspage.png)
+
+##### Update & Delete:
+- The update & delete feature is only available to the user who who directly submitted the artwork.
+![CRUD - update & delete](static/images-readme/readme-u-d-in-crud.png)
 
 ### Features Left to Implement
 - Online shop

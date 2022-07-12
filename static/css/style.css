@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,900;1,100;1,200&family=Permanent+Marker&family=Play:wght@400;700&family=Shadows+Into+Light+Two&display=swap');
 
 h1, h2, h3 {
-    /* color: #25292C; */
     color: #1A313C;
 }
 
@@ -34,7 +33,6 @@ h3 {
 
 .logo-link:hover{
     text-decoration: none;
-    
 }
 
 /* NAVIGATION BAR */
@@ -85,17 +83,6 @@ h3 {
 }
 
 /* HERO IMAGE */
-/* .hero-page {
-    width: 90%;
-    height: 600px;
-    margin: 0 auto;
-    background: url(../images/gallery-wall.jpg) no-repeat;
-    background-size: 100%;
-    background-position-x: 0px;
-    background-position-y: -717px;
-    contain: content;
-} */
-
 .hero-page {
     width: 90%;
     height: 600px;
@@ -115,14 +102,6 @@ h3 {
     width: 90%;
     margin: auto;
 }
-
-/* .about-image {
-    height: 600px;
-    margin: 0 auto;
-    background: url(../images/three-frames.jpg) no-repeat;
-    background-size: 100%;
-    contain: content;
-} */
 
 .about-image {
     height: 600px;
@@ -164,6 +143,7 @@ h3 {
     font-size: 1.5em;
     text-transform: uppercase;
 }
+
 .all-prints-cards p,
 .single-print-card p {
     font-size: 1em;
@@ -223,6 +203,7 @@ h3 {
     padding: 20px;
     margin: 10px;
 }
+
 .all-posts-post-box img{
     width: 100%;
 }
@@ -337,11 +318,7 @@ h3 {
     justify-content: center;
 }
 
-/* @media screen and (min-width:1600px){}
-
-@media screen and (min-width:1500px){} */
-
-/* Desktops, large screens. */
+/* DESKTOP & LARGE SCREENS */
 @media screen and (max-width:1200px){
     /* NAV BAR */
     .nav-bar {
@@ -358,7 +335,7 @@ h3 {
     }
 }
 
-/* For medium screen sizes from 950px wide & down (smaller laptops & tablets) */
+/* MEDIUM SCREENS: LAPTOPS & TABLETS */
 @media screen and (max-width:950px){
     h1 {
         font-family: 'Kanit', sans-serif;
@@ -381,9 +358,6 @@ h3 {
         padding: 5px 38px;
     }
 
-    /* .hero-page {
-        background-position-y: -265px;
-    } */
     .hero-page img {
         top: -323px;
     }
@@ -400,7 +374,7 @@ h3 {
 
 }
 
-/* iPads, Tablets. */
+/* IPADS & TABLETS */
 @media screen and (max-width:768px){
     /* NAV BAR */
     .nav-bar {
@@ -411,7 +385,6 @@ h3 {
     /* HERO IMAGE */
     .hero-page {
         height: 400px;
-        /* background-position-y: -250px; */
     }
 
     .hero-page img {
@@ -437,7 +410,7 @@ h3 {
     }
 }
 
-/* Mobile devices. */
+/* MOBILE DEVICES */
 @media screen and (max-width:480px){
 
     /* HEADER */
@@ -484,7 +457,6 @@ h3 {
     /* HERO IMAGE */
     .hero-page {
         height: 307px;
-        /* background-position-y: -25px; */
     }
 
     .hero-page img {
