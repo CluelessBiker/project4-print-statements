@@ -4,15 +4,16 @@
 
 <!-- ART PRINTS -->
 <div class="col-12 art-prints-area">
-    <div class="row print-display">
+    <div class="row print-display new-submission">
         <!-- NEW PRINT SUBMISSION FIELD -->
         {% if user.is_authenticated %}
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body all-prints-cards">
                     <h2>Submit your print:<h2></h2>
                     <hr />
-                    <p>just click the button</p>
+                    <p>Have a piece you want to share?</p>
+                    <p>Just click the button!</p>
                     <br>
                     <a href="{% url 'submit_print' %}">
                         <button class="submit-print-button">SUBMIT PRINT</button>
@@ -21,7 +22,9 @@
             </div>
         </div>
         {% endif %}
+    </div>
 
+    <div class="row print-display">
         <!-- APPROVED PRINT SUBMISSIONS -->
         {% for print in artprint_list %}
         <div class="col-sm-6 col-md-4 col-lg-3">

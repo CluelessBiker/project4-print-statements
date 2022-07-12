@@ -172,6 +172,12 @@ h3 {
     margin: 3px 0;
 }
 
+/* NEW SUBMISSION BOX */
+.new-submission {
+    justify-content: center;
+    text-align: center;
+}
+
 /* PRINT SUBMISSION PAGE/FORM */
 .submission-form {
     justify-content: center;
