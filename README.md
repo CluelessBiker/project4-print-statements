@@ -63,51 +63,50 @@ Not all stories have been implemented. Some have been left for future implementa
 ### Admin stories:
 #### As an admin:
 - I can **submit new blog posts** so that **I can inform site visitors & artists of new events, artists, and more**.
--- Story points:
+• Story points:
 - I can **moderate blog comments** so that **the feedback provided is appropriate**.
--- Story points:
+• Story points:
 - I can **create a log in / sign up page** so that **artists and visitors can sign up to the site**.
--- Story points:
-- I can **** so that ****.
--- Story points:
+• Story points:
 
 ### Artist stories:
 #### As an artist:
 - I can **create a user profile** so that **I can be found & viewed on the site**.
--- Story points:
+• Story points:
 - I can **upload artwork** so that **I can share it with art enthusiasts**.
--- Story points:
+• Story points:
 - I can **select a medium, and print size** so that **I can have the work printed**.
--- Story points:
+• Story points:
 - I can **choose how many prints I would like** so that **my work is sold as a limited edition run**.
--- Story points:
+• Story points:
 - I can **set a price** so that **I can sell my work**.
--- Story points:
+• Story points:
 
 ### Visitor stories:
 #### As a visitor:
 - I can **visit the blog** so that **I can see what is new**.
--- Story points:
+• Story points:
 - I can **comment on blog posts** so that **I can give my feedback**.
--- Story points:
+• Story points:
 - I can **like blog posts** so that **I can easily share my enthusiasm**.
--- Story points:
+• Story points:
 - I can **peruse the gallery** so that **I can discover new artists, and new artworks by artists I already know**.
--- Story points:
+• Story points:
 - I can **follow artists** so that **I can be updated when new work is released**.
--- Story points:
+• Story points:
 - I can **like an artists** so that **I can show my appreciation**.
--- Story points:
+• Story points:
 
 ## Design
 
 ### Wireframes:
-![Desktop wireframe]()
-![Smartphone wireframe]()
+![Desktop Home](static/images-readme/readme-wireframe-homepage.png)
+![Desktop Blog](static/images-readme/readme-wireframe-blogposts.png)
+![Desktop Blog Post](static/images-readme/readme-wireframe-blogview.png)
+![Site Navigation](static/images-readme/readme-wireframe-sitenav.png)
 
 ### Colour Scheme:
-
-![Colour Palette]()
+![Colour Palette](static/images-readme/readme-colour-palette.png)
 
 ### Typography:
 All fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
@@ -122,37 +121,50 @@ All photography for the fictional "artists" was supplied by me.
 
 ### Existing Features:
 
-#### Landing Page:
-![]()
+#### Home Page:
+![Home page](static/images-readme/readme-homepage.png)
 
 #### Navigation Bar:
-![]()
+Desktop:
+![Navbar desktop](static/images-readme/readme-nav-desktop.png)
+
+Mobile:
+![Navbar mobile](static/images-readme/readme-nav-mobile.png)
 
 #### About Page:
-![]()
+![About page](static/images-readme/readme-aboutpage.png)
 
-#### Gallery:
-![]()
+#### Prints Page:
+![Prints Page](static/images-readme/readme-printspage.png)
 
-#### Blog:
-![]()
+#### Print Details Page:
+![Print Details Page](static/images-readme/readme-print-details.png)
 
-#### Log in & Sign up:
-![]()
+#### Blog Page:
+![Blog Page](static/images-readme/readme-blog.png)
 
-#### Online Shop:
-![]()
+#### Blog Post Details:
+![Blog Post Details](static/images-readme/readme-blog-post.png)
+
+#### Log in, Log out & Sign up:
+Login:
+![Login](static/images-readme/readme-signin.png)
+
+Logout:
+![Logout](static/images-readme/readme-signout.png)
+
+Sign-up:
+![Sign-up](static/images-readme/readme-signup.png)
 
 #### Social Links:
-![]()
+![Social Links](static/images-readme/)
 
 ### Features Left to Implement
-- Home page
-- About Page
-- Sign-up/Log-in page
-- Blog Page
-- Artists gallery
 - Online shop
+- Artist profiles
+- Contact page
+- Password reset
+- Social media sign-in
 
 ## Testing
 I was unable to load the home (index.html) page using the generic views. This was resolved with trial & error, and I realised that by changing the class to a function in views.py, as well as simply rendering the page, along with removing the ```.as_view()``` from the url path resolved the issue.
@@ -194,7 +206,7 @@ Once the submission form had been created to allow a user to submit a new work o
 
 - page has an excellent Accessibility rating in Lighthouse
 
-![Accessibility score]()
+![Accessibility score](static/images-readme/readme-lighthouse.png)
 
 - Python files passed through [PEP8 Online](http://pep8online.com/) with no issues found.
 
