@@ -68,6 +68,15 @@ def edit_art_print(request, slug):
     return render(request, 'edit-print.html', context)
 
 
+def delete_art_print(request, slug):
+    """
+    Delete a submitted artprint
+    """
+    prints = get_object_or_404(ArtPrint, slug=slug)
+    prints.delete()
+    return redirect('prints')
+
+
 class PrintDetails(View):
     """
     Render the individual print
