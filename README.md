@@ -249,7 +249,7 @@ Once the submission form had been created to allow a user to submit a new work o
 
 - CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
-![Jigsaw validator message]()
+![Jigsaw validator message](static/images-readme/readme-w3c-css.png)
 
 - JS files pass through [JSHint](https://jshint.com/) with no issues found.
 
