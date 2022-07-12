@@ -10,13 +10,12 @@
         <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body all-prints-cards">
-                    <h2>Submit your print:<h2></h2>
+                    <h2>Edit your print:<h2></h2>
                     <hr />
-                    <p>just click the button</p>
                     <form method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
                         {{ submission_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" class="submit-print-button">Submit</button>
+                        <button type="submit" class="submit-print-button">Submit Changes</button>
                     </form>
                 </div>
             </div>

@@ -172,6 +172,11 @@ h3 {
     margin: 3px 0;
 }
 
+/* PRINT SUBMISSION PAGE/FORM */
+.submission-form {
+    justify-content: center;
+}
+
 .single-print-card {
     line-height: 40px;
 }
