@@ -17,6 +17,7 @@ class SubmitPrintForm(forms.ModelForm):
         model = ArtPrint
         fields = (
             'print_name',
+            'slug',
             'description',
             'category',
             'artwork_image',
@@ -28,6 +29,7 @@ class SubmitPrintForm(forms.ModelForm):
         )
         labels = {
             'print_name': 'Title',
+            'slug': 'Repeat title. Do not include spaces.',
             'description': 'Description',
             'category': 'Category',
             'artwork_image': 'Select image',
