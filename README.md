@@ -122,6 +122,10 @@ Not all stories have been implemented. Some have been left for future implementa
 
 ![Site Navigation](static/images-readme/readme-wireframe-sitenav.png)
 
+### Database Schema
+
+![Database Schema](static/images-readme/readme-db-schema.png)
+
 ### Colour Scheme:
 
 ![Colour Palette](static/images-readme/readme-colour-palette.png)
@@ -243,17 +247,16 @@ As none of these resolved the issue, and I was unable to ascertain the solution 
 Once the submission form had been created to allow a user to submit a new work of art to the prints gallery, the form would not work. The error messages in the terminal suggested that no file was selected, and thus, the form would not complete. After exhausting my resources, I reached out to tutor support again, and with the assistance of Ger, was informed that ```enctype="multipart/form-data``` needed to be included in the form field. As soon as this was added, the form submitted without issue.
 
 ### Validator Testing
-- html files pass through the [W3C validator](https://validator.w3.org/) with no issues found.
-
-![W3C validator message]()
+- html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
+- Errors listed only reference {%%} & {{}} tags.
 
 - CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
 
 ![Jigsaw validator message](static/images-readme/readme-w3c-css.png)
-
+<!-- 
 - JS files pass through [JSHint](https://jshint.com/) with no issues found.
 
-![JSHint overview]()
+![JSHint overview]() -->
 
 - page has an excellent Accessibility rating in Lighthouse
 
@@ -262,7 +265,7 @@ Once the submission form had been created to allow a user to submit a new work o
 - Python files passed through [PEP8 Online](http://pep8online.com/) with no issues found.
 
 - Tested the site opens in Brave, Chrome & Safari without issues.
-- All links open to external pages as intended.
+- All social links open to external pages as intended.
 
 ### Unfixed Bugs
 
@@ -327,7 +330,7 @@ python3 manage.py migrate
 - created the Procfile
 - pushed the project to Github
 - connected my github account to Heroku through the Deploy tab
-- and connected my github project repository, and then clicked on the "Deploy" button
+- connected my github project repository, and then clicked on the "Deploy" button
 
 - The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
 
@@ -351,35 +354,9 @@ python3 manage.py migrate
 - All photography displayed in the Artists gallery was created by me.
 - The drawings were provided by my friend, [Eleni Sarri](https://www.instagram.com/elenibydesign/), with her permission.
 
-##### Pexels stock images:
+#### Pexels:
 <!-- - unused, Photo by [Barbara Wyrowińska](https://www.pexels.com/photo/green-photo-frame-2961734/) -->
 - Hero image, Photo by: [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
 - About page, Photo by: [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
 - Default blog post image, by: [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
 
-DATA SETS:
-Sign-up - visitor:
-- first name
-- last name
-- phone number
-- email
-
-Sign-up - artist:
-- first name
-- last name
-- phone number
-- email
-- artist name
-- country
-- description
-- street name
-
-Art submission:
-- print height
-- print width
-- paper selection
-- piece name
-- number of copies
-- number of copies remaining
-- file
-- price

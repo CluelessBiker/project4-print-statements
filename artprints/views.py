@@ -24,7 +24,6 @@ def submit_art_print(request):
     View for print submission page.
     """
     if request.method == 'POST':
-        # breakpoint()
         submission_form = SubmitPrintForm(request.POST, request.FILES)
         if submission_form.is_valid():
             submission_form.instance.artist = request.user
@@ -56,7 +55,8 @@ def edit_art_print(request, slug):
     }
 
     if request.method == 'POST':
-        edit_form = SubmitPrintForm(request.POST, request.FILES, instance=prints)
+        edit_form = SubmitPrintForm(
+            request.POST, request.FILES, instance=prints)
         if edit_form.is_valid():
             prints = edit_form.save(commit=False)
             prints.artist = request.user
@@ -64,7 +64,7 @@ def edit_art_print(request, slug):
             return redirect('prints')
     else:
         edit_form = SubmitPrintForm(instance=prints)
-    
+
     return render(request, 'edit-print.html', context)
 
 
