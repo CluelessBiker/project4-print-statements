@@ -51,7 +51,6 @@ class ArtPrint(models.Model):
     likes = models.ManyToManyField(
         User, related_name='print_likes', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
 
     class Meta:
         """

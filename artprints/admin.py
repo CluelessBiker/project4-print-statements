@@ -13,16 +13,17 @@ class PrintAdmin(admin.ModelAdmin):
     is displayed in the admin panel
     """
     prepopulated_fields = {'slug': ('print_name',)}
-    list_display = ('print_name', 'artist', 'status', 'created_on', 'approved')
+    list_display = ('print_name', 'artist', 'status', 'created_on')
     list_filter = ('artist', 'created_on')
     search_fields = ['print_name', 'artist']
+    actions = ['publish_print']
 
-    def approve_print(self, request, queryset):
+    def publish_print(self, request, queryset):
         """
         Function to approve pending
         art posts.
         """
-        queryset.update(approved=True)
+        queryset.update(status=1)
 
 
 admin.site.register(Category)
