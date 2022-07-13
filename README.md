@@ -1,7 +1,7 @@
 # print(STATEMENTS)
 Print statements is a safe haven that brings artists & consumers together in harmony. It allows artists to take control of the distribution of their work, and share their passions with the general public. As well as bringing an interactive, engaging platform for the public to find pieces from their favourite artists, as well as allowing them to discover new & upcoming figures within the art world.
 
-![Site view across devices]()
+![Site view across devices](static/images-readme/readme-amiresponsive.png)
 
 The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
 
@@ -68,39 +68,39 @@ Not all stories have been implemented. Some have been left for future implementa
 ### Admin stories:
 #### As an admin:
 1. I can **submit new blog posts** so that **I can inform site visitors & artists of new events, artists, and more**.
- - Story points:
+ - Story points: 3
 2. I can **moderate blog comments** so that **the feedback provided is appropriate**.
- - Story points:
+ - Story points: 1
 3. I can **create a log in / sign up page** so that **artists and visitors can sign up to the site**.
- - Story points:
+ - Story points: 2
 
 ### Artist stories:
 #### As an artist:
 1. I can **create a user profile** so that **I can be found & viewed on the site**.
- - Story points:
+ - Story points: 3
 2. I can **upload artwork** so that **I can share it with art enthusiasts**.
- - Story points:
+ - Story points: 5
 3. I can **select a medium, and print size** so that **I can have the work printed**.
- - Story points:
+ - Story points: 1
 4. I can **choose how many prints I would like** so that **my work is sold as a limited edition run**.
- - Story points:
+ - Story points: 1
 5. I can **set a price** so that **I can sell my work**.
- - Story points:
+ - Story points: 1
 
 ### Visitor stories:
 #### As a visitor:
 1. I can **visit the blog** so that **I can see what is new**.
- - Story points:
+ - Story points: 5
 2. I can **comment on blog posts** so that **I can give my feedback**.
- - Story points:
+ - Story points: 2
 3. I can **like blog posts** so that **I can easily share my enthusiasm**.
- - Story points:
+ - Story points: 1
 4. I can **peruse the gallery** so that **I can discover new artists, and new artworks by artists I already know**.
- - Story points:
+ - Story points: 5
 5. I can **follow artists** so that **I can be updated when new work is released**.
- - Story points:
+ - Story points: 3
 6. I can **like an artists** so that **I can show my appreciation**.
- - Story points:
+ - Story points: 2
 
 ## Design
 
@@ -375,15 +375,17 @@ python3 manage.py migrate
 - [Mats Simonsson](https://github.com/Pelikantapeten): A fellow student & friend who consistently helps me to troubleshoot when needed, and be my rubber duck.
 - [Martina Terlevic](https://github.com/SephTheOverwitch): A constant support system, providing reassurance, and the ability to calm me down.
 - “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site, as well as this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
+- "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow: aided in the creation of the CRUD functions.
 - Sean from Tutor Support: Singling out the most recent blog post with an "IF statement".
 - Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database resolved this.
-- Ger from Tutor support: limiting view sections to a single user
-- ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html): creating types of user groups
-- [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu
-- [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps): connect URL paths from multiple apps
-- [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields): add form label
-- [Stackoverflow](https://stackoverflow.com/questions/3111779/how-can-i-get-the-file-name-from-request-files): iterating over form field
+- Ger from Tutor support: limiting view sections to a single user.
+- ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html): creating types of user groups.
+- [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu.
+- [Stackoverflow](https://stackoverflow.com/questions/66185424/django-how-do-i-handle-urls-with-multiple-apps): connect URL paths from multiple apps.
+- [Stackoverflow](https://stackoverflow.com/questions/38724012/django-crispy-forms-set-label-text-for-multiple-fields): add form label.
+- [Stackoverflow](https://stackoverflow.com/questions/3111779/how-can-i-get-the-file-name-from-request-files): iterating over form field.
 - [Stackoverflow](https://stackoverflow.com/questions/23956288/django-all-auth-email-required): Allauth email sign up required.
+- [Slack thread](https://code-institute-room.slack.com/archives/C7EJUQT2N/p1642336796215800?thread_ts=1642316166.200400&cid=C7EJUQT2N): Assistance with function to submit new prints.
 
 ### Media
 - All photography displayed in the Artists gallery was created by me.

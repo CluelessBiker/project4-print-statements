@@ -19,6 +19,8 @@ class PrintsPage(generic.ListView):
     paginate_by = 12
 
 
+# Function built using instructions from "Hello Django", "I think therefore I blog"
+# And a comment on slack - credited in README.
 def submit_art_print(request):
     """
     View for print submission page.
@@ -68,6 +70,7 @@ def edit_art_print(request, slug):
     return render(request, 'edit-print.html', context)
 
 
+# Instructed by "Hello Django"
 def delete_art_print(request, slug):
     """
     Delete a submitted artprint
