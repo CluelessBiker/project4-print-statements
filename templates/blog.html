@@ -83,14 +83,10 @@
         {% if is_paginated %}
         <div>
             {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">
-                <button class="pagination-button">PREV</button>
-            </a>
+            <button onclick="location.href='?page={{ page_obj.previous_page_number }}'" type="button" class="pagination-button">PREV</button>
             {% endif %}
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">
-                <button class="pagination-button">NEXT</button>
-            </a>
+            <button onclick="location.href='?page={{ page_obj.next_page_number }}'" type="button" class="pagination-button">NEXT</button>
             {% endif %}
         </div>
     {% endif %}

@@ -19,7 +19,7 @@
             </div>
         </div>
 
-    <!-- PRINT DETAILS -->
+        <!-- PRINT DETAILS -->
         <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body single-print-card">
@@ -32,33 +32,31 @@
                     <p>Description: {{ prints.description | safe }}</p>
                     <!-- PRINT LIKES -->
                     <div class="likes-comments">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'like_print' prints.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" , name="artprint_id" value="{{ prints.slug }}"
-                                    class="like-button-pressed"><i class="fas fa-heart"></i> {{ prints.number_of_likes }}</button>
-                                {% else %}
-                                <button type="submit" , name="artprint_id" value="{{ prints.slug }}" class="like-button"><i
-                                        class="far fa-heart"></i> {{ prints.number_of_likes }}</button>
-                                {% endif %}
-                            </form>
-
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'like_print' prints.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="artprint_id" value="{{ prints.slug }}"
+                                class="like-button-pressed"><i class="fas fa-heart"></i>
+                                {{ prints.number_of_likes }}</button>
                             {% else %}
-                            <p><strong class="text-secondary"><i class="far fa-heart"></i> {{ prints.number_of_likes }}</strong></p>
+                            <button type="submit" name="artprint_id" value="{{ prints.slug }}" class="like-button"><i
+                                    class="far fa-heart"></i> {{ prints.number_of_likes }}</button>
                             {% endif %}
+                        </form>
 
-                            {% if request.user == prints.artist %}
-                            <hr>
-                            <a href="{% url 'edit_print' prints.slug %}">
-                                <button class="edit-delete-button">EDIT</button>
-                            </a>
-                            <a href="{% url 'delete_print' prints.slug %}">
-                                <button class="edit-delete-button">DELETE</button>
-                            </a>
-                            {% endif %}
-                        </strong>
+                        {% else %}
+                        <p><strong class="text-secondary"><i class="far fa-heart"></i>
+                                {{ prints.number_of_likes }}</strong></p>
+                        {% endif %}
+
+                        {% if request.user == prints.artist %}
+                        <hr>
+                        <button onclick="location.href='{% url 'edit_print' prints.slug %}'" type="button"
+                            class="edit-delete-button">EDIT</button>
+                        <button onclick="location.href='{% url 'delete_print' prints.slug %}'" type="button"
+                            class="edit-delete-button">DELETE</button>
+                        {% endif %}
                     </div>
                 </div>
             </div>

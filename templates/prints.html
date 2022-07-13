@@ -10,14 +10,12 @@
         <div class="col-sm-6">
             <div class="card mb-4">
                 <div class="card-body all-prints-cards">
-                    <h2>Submit your print:<h2></h2>
+                    <h2>Submit your print:</h2>
                     <hr />
                     <p>Have a piece you want to share?</p>
                     <p>Just click the button!</p>
                     <br>
-                    <a href="{% url 'submit_print' %}">
-                        <button class="submit-print-button">SUBMIT PRINT</button>
-                    </a>
+                    <button onclick="location.href='{% url 'submit_print' %}'" type="button" class="submit-print-button">SUBMIT PRINT</button>
                 </div>
             </div>
         </div>
@@ -59,14 +57,10 @@
         {% if is_paginated %}
         <div>
             {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">
-                <button class="pagination-button">PREV</button>
-            </a>
+            <button onclick="location.href='?page={{ page_obj.previous_page_number }}'" type="button" class="pagination-button">PREV</button>
             {% endif %}
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">
-                <button class="pagination-button">NEXT</button>
-            </a>
+            <button onclick="location.href='?page={{ page_obj.next_page_number }}'" type="button" class="pagination-button">NEXT</button>
             {% endif %}
         </div>
     {% endif %}

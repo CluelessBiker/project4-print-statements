@@ -38,10 +38,10 @@
                     <form class="d-inline" action="{% url 'like_post' post.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" , name="blogpost_id" value="{{ post.slug }}"
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}"
                             class="like-button-pressed"><i class="fas fa-heart"></i> {{ post.number_of_likes }}</button>
                         {% else %}
-                        <button type="submit" , name="blogpost_id" value="{{ post.slug }}" class="like-button"><i
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="like-button"><i
                                 class="far fa-heart"></i> {{ post.number_of_likes }}</button>
                         {% endif %}
                     </form>
