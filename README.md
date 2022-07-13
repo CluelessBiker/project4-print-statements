@@ -59,7 +59,7 @@ To become instantly engaged with the design of the site, and feel intrigued to e
 - To view all the available artwork created by an artist both on their profile page, and by clicking on the artist name when viewing an artwork.
 - To allow users to follow artists directly, and receive email notifications when new works are available for sale.
 - To have an online shop that will make the individual artworks available for sale.
-- For the remaining number of aratworks to be instantly displayed on the prints page under "remaining prints."
+- For the remaining number of artworks to be instantly displayed on the prints page under "remaining prints."
 - To provide access for the artists to not only select the number of limited edition prints they would like to sell, but also choose the size of the work, along with the medium on which is is printed (canvas, glossy print, mat, etc...)
 
 ## User Stories
@@ -228,11 +228,11 @@ The css styles were not loading into my blog page, or my blog post page. Upon re
 
 After installing ```django-allauth``` I was unable to migrate my changes. Each time I tried, I encountered an error message in the terminal that I could not decipher. I checked & rechecked each of the commands I had used then installing the package, along with adding it to the requirements file, as well as triple checking lines added in settings and urls. Eventually I reached out to Tutor Support, and they informed me that Heroku often alters the DATABASE configvar for security reasons. Upon updating the value in my env.py file, the issue was instantly rectified.
 
-After installing **crispy-forms**, an "Invalid syntx" error was displaying in the terminal. This was fixed by providing the missing comma within the BlogPostPage class.
+After installing **crispy-forms**, an "Invalid syntax" error was displaying in the terminal. This was fixed by providing the missing comma within the BlogPostPage class.
 
 Django was then throwing an error, as the CSRF token had been added incorrectly to the form field.
 
-After adding a "categories" field to my Artprints model, I then received an error message when trying to migrate the changes, as it was a required field & no default foreignkey was provided. I added a default field, assuming I could name a category, and this in turn caused a whole new string of error messages. After updating the field, I was unable to migrate the changes still, as the error kept persisting. I looked up how to revert the migrations on [Stackoverflow](https://stackoverflow.com/questions/32123477/how-to-revert-the-last-migration) using the following command: ```./manage.py migrate artprints zero```, but this did not resolve the issue. After consulting with a fellow student who had experienced something similar, [Mats Simonsson](https://github.com/Pelikantapeten), I then deleted the files out of the migrations folder within my app folder. As I had not yet pupolated the databases with a significant amount of information, this seemed like a reasonable fix.
+After adding a "categories" field to my Artprints model, I then received an error message when trying to migrate the changes, as it was a required field & no default foreignkey was provided. I added a default field, assuming I could name a category, and this in turn caused a whole new string of error messages. After updating the field, I was unable to migrate the changes still, as the error kept persisting. I looked up how to revert the migrations on [Stackoverflow](https://stackoverflow.com/questions/32123477/how-to-revert-the-last-migration) using the following command: ```./manage.py migrate artprints zero```, but this did not resolve the issue. After consulting with a fellow student who had experienced something similar, [Mats Simonsson](https://github.com/Pelikantapeten), I then deleted the files out of the migrations folder within my app folder. As I had not yet populated the databases with a significant amount of information, this seemed like a reasonable fix.
 
 Creating the URL path became problematic, as each time I attempted, it resulted in my weblink diplaying "/prints/prints" instead of just "prints". As I was unable to find a solution to resolve this, I changed the path so it would read "/art/prints/" for aesthetics.
 
@@ -242,7 +242,7 @@ The Hero image, and About page image were not loading to the site after deployme
 - ```background: url('{% static "images/gallery-wall.jpg" %}') no-repeat;```
 - ```background: url("{{ STATIC_URL }}images/gallery-wall.jpg") no-repeat;```
 - ```background: url(static("images/gallery-wall.jpg"));```
-As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resolrted to loading the images directly into the HTML files as opposed to the CSS. 
+As none of these resolved the issue, and I was unable to ascertain the solution that I required, I instead resorted to loading the images directly into the HTML files as opposed to the CSS. 
 
 Once the submission form had been created to allow a user to submit a new work of art to the prints gallery, the form would not work. The error messages in the terminal suggested that no file was selected, and thus, the form would not complete. After exhausting my resources, I reached out to tutor support again, and with the assistance of Ger, was informed that ```enctype="multipart/form-data``` needed to be included in the form field. As soon as this was added, the form submitted without issue.
 
@@ -263,6 +263,8 @@ Once the submission form had been created to allow a user to submit a new work o
 ![Accessibility score](static/images-readme/readme-lighthouse.png)
 
 - Python files passed through [PEP8 Online](http://pep8online.com/) with no issues found.
+
+![PEP8 message](static/images-readme/readme-pep8.png)
 
 - Tested the site opens in Brave, Chrome & Safari without issues.
 - All social links open to external pages as intended.
@@ -359,4 +361,3 @@ python3 manage.py migrate
 - Hero image, Photo by: [Tom Balabaud](https://www.pexels.com/photo/framed-photo-lot-1579708/)
 - About page, Photo by: [¶Project Atlas](https://www.pexels.com/photo/three-paintings-hanging-in-gallery-1674049/)
 - Default blog post image, by: [cottonbro](https://www.pexels.com/photo/person-holding-white-and-black-frame-4065183/)
-
