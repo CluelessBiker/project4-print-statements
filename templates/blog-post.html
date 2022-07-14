@@ -87,20 +87,13 @@
             <!-- card modified from django walkthrough -->
             {% if user.is_authenticated %}
             <div class="card col-md-11 single-post-comments">
-                <div class="card-body">
-                    {% if commented %}
-                    <div class="alert alert-success" role="alert">
-                        Please wait whilst your comment is approved.
-                    </div>
-                    {% else %}
-                    
+                <div class="card-body">                    
                     <h3>Add your two cents:</h3>
                     <form method="POST" style="margin-top: 1.3em;">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="submit-comment-button">Submit</button>
                     </form>
-                    {% endif %}
                 </div>
             {% else %}
                 <div></div>

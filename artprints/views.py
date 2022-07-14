@@ -19,7 +19,8 @@ class PrintsPage(generic.ListView):
     paginate_by = 12
 
 
-# Function built using instructions from "Hello Django", "I think therefore I blog"
+# Function built using instructions from "Hello Django",
+# "I think therefore I blog"
 # And a comment on slack - credited in README.
 def submit_art_print(request):
     """
@@ -30,6 +31,8 @@ def submit_art_print(request):
         if submission_form.is_valid():
             submission_form.instance.artist = request.user
             submission_form.save()
+            messages.success(
+                request, "Faantastic! Please wait while we review it!.")
             return redirect('prints')
         else:
             print("ERROR")
