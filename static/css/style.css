@@ -250,6 +250,9 @@ h3 {
 
 .single-blog-bodytext {
     font-family: 'Kanit', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding: 20px;
 }
 
 .single-blog-img {
