@@ -282,6 +282,8 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  11. Blog post page pushes social links to left:
   - Upon inspection in dev tools, the row containtint the comments was being duplicated, causing the layout to shift.
   - Issue resolved by moving the ```{% endif %}``` inside of the closing div for the row.
+  - This then caused an issue with the view when the user was logged out.
+  - Once more, the opening & closing if statements needed to be moved outside the row entirely.
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
@@ -339,23 +341,21 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 
 ## Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
+- Install Django & Gunicorn:
+```pip3 install 'django<4' gunicorn```
+- Install Django database & psycopg:
+```pip3 install dj_database_url psycopg2```
+- Install Cloudinary:
+```pip3 install dj3-cloudinary-storage```
 - Creating the requirements.txt file with the following command:
-```
-pip3 freeze --local > requirements.txt
-```
+```pip3 freeze --local > requirements.txt```
 - a django project was created using:
-```
-django-admin startproject printstatements .
-```
+```django-admin startproject printstatements .```
 - the blog app was then created with:
-```
-python3 manage.py startapp blog
-```
+```python3 manage.py startapp blog```
 - which was then added to the settings.py file within our project directory.
 - the changes were then migrated using:
-```
-python3 manage.py migrate
-```
+```python3 manage.py migrate```
 - navigated to [Heroku](www.heroku.com) & created a new app called print-statements.
 - added the Heroku Postgres database to the Resources tab.
 - navigated to the Settings Tab, to add the following key/value pairs to the configvars:
@@ -365,6 +365,7 @@ python3 manage.py migrate
 4. key:  | value: 
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the env.py file
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file
+- add an import os statement for the env.py file.
 - added Heroku to the ALLOWED_HOSTS in settings.py
 - created the Procfile
 - pushed the project to Github
@@ -379,7 +380,7 @@ python3 manage.py migrate
 - [Mats Simonsson](https://github.com/Pelikantapeten): A fellow student & friend who consistently helps me to troubleshoot when needed, and be my rubber duck.
 - [Martina Terlevic](https://github.com/SephTheOverwitch): A constant support system, providing reassurance, and the ability to calm me down.
 - “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site, as well as this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
-- "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow: aided in the creation of the CRUD functions.
+- "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow + a fellow [student](https://github.com/cornishcoder1): aided in the creation of the CRUD functions.
 - Sean from Tutor Support: Singling out the most recent blog post with an "IF statement".
 - Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database resolved this.
 - Ger from Tutor support: limiting view sections to a single user.

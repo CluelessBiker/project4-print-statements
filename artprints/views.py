@@ -20,7 +20,8 @@ class PrintsPage(generic.ListView):
 
 
 # Function built using instructions from "Hello Django",
-# "I think therefore I blog"
+# "I think therefore I blog",
+# Stackoverflow, a fellow student,
 # And a comment on slack - credited in README.
 def submit_art_print(request):
     """
@@ -35,8 +36,6 @@ def submit_art_print(request):
                 request, "Faantastic! Please wait while we review it!.")
             return redirect('prints')
         else:
-            print("ERROR")
-            print(submission_form.errors)
             submission_form = SubmitPrintForm()
 
     return render(

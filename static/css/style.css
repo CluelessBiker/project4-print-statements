@@ -371,7 +371,6 @@ h3 {
     .single-blog-author h2{
         font-size: 1.4em;
     }
-
 }
 
 /* IPADS & TABLETS */
@@ -412,7 +411,6 @@ h3 {
 
 /* MOBILE DEVICES */
 @media screen and (max-width:480px){
-
     /* HEADER */
     .logo-tagline {
         height: 53px;
