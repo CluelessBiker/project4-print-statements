@@ -65,9 +65,10 @@
         </div>
 
         <!-- SUBMIT COMMENT -->
+        {% if user.is_authenticated %}
         <div class="row">
             <!-- card modified from django walkthrough -->
-            {% if user.is_authenticated %}
+            
             <div class="card col single-post-comments">
                 <div class="card-body">                    
                     <h3>Add your two cents:</h3>
@@ -77,11 +78,12 @@
                         <button type="submit" class="submit-comment-button">Submit</button>
                     </form>
                 </div>
-            {% else %}
-                <div></div>
-            {% endif %}
+
+
+            
             </div>
         </div>
+        {% endif %}
 
         <!-- PUBLISHED COMMENTS -->
         <div class="row">
