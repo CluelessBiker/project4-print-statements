@@ -279,6 +279,10 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - To resolve this, the slug field was added to the form field.
  - Have not yet figured out to have this auto-populate as it would were it submitted directly from the admin panel.
 
+ 11. Blog post page pushes social links to left:
+  - Upon inspection in dev tools, the row containtint the comments was being duplicated, causing the layout to shift.
+  - Issue resolved by moving the ```{% endif %}``` inside of the closing div for the row.
+
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
 - Errors listed only reference {%%} & {{}} tags.

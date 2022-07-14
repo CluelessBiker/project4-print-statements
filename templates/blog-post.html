@@ -4,11 +4,13 @@
 
 {% load crispy_forms_tags %}
 
+<!-- TITLE -->
 <div class="row single-blog-post">
     <h1 class="name">{{ post.title }}</h1>
 </div>
+
 <div class="row single-blog-post">
-    <!-- TITLE - AUTHOR - CONTENT -->
+    <!-- AUTHOR - CONTENT -->
     <div class="col-md-7">
         <div class="row">
             <div class="col single-blog-author">
@@ -22,14 +24,16 @@
 
     <div class="col-md-5 single-blog-img">
         <!-- BLOG POST IMAGE -->
-        {% if "placeholder" in post.featured_image.url %}
-        <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="default image">
-        {% else %}
-        <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
-        {% endif %}
-
+        <div class="row">
+            {% if "placeholder" in post.featured_image.url %}
+            <img src="https://images.pexels.com/photos/4065183/pexels-photo-4065183.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt="default image">
+            {% else %}
+            <img src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+            {% endif %}
+        </div>
         
+        <!-- LIKES & COMMENTS -->
         <div class="row">
             <!-- POST LIKES -->
             <div class="col-2 likes-comments">
@@ -60,10 +64,29 @@
             </div>
         </div>
 
+        <!-- SUBMIT COMMENT -->
         <div class="row">
-            <!-- POST COMMENTS -->
             <!-- card modified from django walkthrough -->
-            <div class="card col-md-11 single-post-comments">
+            {% if user.is_authenticated %}
+            <div class="card col single-post-comments">
+                <div class="card-body">                    
+                    <h3>Add your two cents:</h3>
+                    <form method="POST" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="submit-comment-button">Submit</button>
+                    </form>
+                </div>
+            {% else %}
+                <div></div>
+            {% endif %}
+            </div>
+        </div>
+
+        <!-- PUBLISHED COMMENTS -->
+        <div class="row">
+            <!-- card modified from django walkthrough -->
+            <div class="card col single-post-comments">
                 <h3>Comments:</h3>
                 <div class="card-body">
                     {% for comment in comments %}
@@ -80,25 +103,6 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <!-- SUBMIT COMMENT -->
-            <!-- card modified from django walkthrough -->
-            {% if user.is_authenticated %}
-            <div class="card col-md-11 single-post-comments">
-                <div class="card-body">                    
-                    <h3>Add your two cents:</h3>
-                    <form method="POST" style="margin-top: 1.3em;">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="submit-comment-button">Submit</button>
-                    </form>
-                </div>
-            {% else %}
-                <div></div>
-            </div>
-            {% endif %}
         </div>
     </div>
 </div>
