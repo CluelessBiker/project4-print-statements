@@ -23,6 +23,7 @@ The live link for "print(STATEMENTS)" can be found [HERE](https://print-statemen
   + [Imagery](#imagery "Imagery")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
+  + [C.R.U.D](#crud "C.R.U.D")
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
@@ -37,13 +38,13 @@ The live link for "print(STATEMENTS)" can be found [HERE](https://print-statemen
 ## UX
 
 ### Site Purpose:
-The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”](https://print-statements.herokuapp.com/) Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the number of limited edition copies they would like to order. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
+The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”](https://print-statements.herokuapp.com/) Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the price, and number of limited edition copies they would like to sell. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
 
 ### Site Goal:
-To build a platform that allows artists to easily share their work and passions with their fans, and art loves who have yet to discover their talents. As well as to bring an engaging experience to artists and consumers alike. By having a display of artwork from a range of individuals, art-lovers will be able to easily peruse through pieces that engage them in a way that only art can.
+To build a platform that allows artists to easily share their work and passions with their fans, and art lovers who have yet to discover their talents. As well as to bring an engaging experience to artists and consumers alike. By having a display of artwork from a range of individuals, art-lovers will be able to easily peruse through pieces that engage them in a way that only art can.
 
 ### Audience:
-For everyone with a thirst for beauty in their lives. For the experiences art collectors who know what they are looking for, as well as those just discovering the art world with fresh new eyes. The ideal user age is between 20-50 years of age.
+For everyone with a thirst for beauty in their lives. For the experienced art collectors who know what they are looking for, as well as those just discovering the art world with fresh new eyes. The ideal user age is between 20-50 years of age.
 
 ### Communication:
 With a clean, easy to follow layout, the user - both artist and consumer alike - are guided through the features of the website with an ease of navigation.
@@ -241,7 +242,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - CSRF token had been added as CRSF.
  - Correcting the error resolved the issue.
 
-6. Console error after adding "Categories" filed to Artprints model:
+6. Console error after adding "Categories" field to Artprints model:
  - The console indicated that a default field had not been supplied.
  - As I did not remember that it would need to be an integer, I added ```default='undecided'``` to the field.
  - This produced further error messages.
@@ -277,7 +278,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - This was due to the slug field not being included in the form submission.
  - Another side effect of this, is that when the print was then approved via the admin panel, should the admin not pay attention and approve it without inserting a slug, the entire prints page would then fail to load.
  - To resolve this, the slug field was added to the form field.
- - Have not yet figured out to have this auto-populate as it would were it submitted directly from the admin panel.
+ - Have not yet figured out how to have this auto-populate as it would were it submitted directly from the admin panel.
  - However, adding the slug field ensures that the "Create" feature of CRUD now works as intended.
 
 11. Blog post page pushes social links to left:
@@ -297,7 +298,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 14. Forms test failed to run:
  - When running the newly created test in forms.py, the following error occurred in the terminal: "Got an error creating the test database: permission denied to create database".
  - A [Slack comment](https://code-institute-room.slack.com/archives/C026PTF46F5/p1647428298841409?thread_ts=1647427231.501879&cid=C026PTF46F5) provided the answer for this, & suggested that the new DATABASES variable in the settings.py file needed to be commented out, and the original one to be made active again for the tests to work.
- - Following this steps allowed the test to perform as expected.
+ - Following these steps allowed the test to perform as expected.
 
 15. AssertionError: 301 != 200:
  - The second test implemented from the "Hello Django" project failed each time it was ran.
@@ -348,6 +349,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 - Adobe Photoshop - for photo editing
 - Django
 - Bootstrap
+- DrawSQL
 
 ### Installed Packages:
 - 'django<4' gunicorn
@@ -380,7 +382,7 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 1. key: SECRET_KEY | value: randomkey
 2. key: PORT | value: 8000
 3. key: CLOUDINARY_URL | value: API environment variable
-4. key:  | value: 
+4. key: DATABASE_URL | value: value supplied by Heroku
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the env.py file
 - added the DATABASE_URL, SECRET_KEY & CLOUDINARY_URL to the settings.py file
 - add an import os statement for the env.py file.
@@ -395,12 +397,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 ## Credits
 
 ### Content
-- [Mats Simonsson](https://github.com/Pelikantapeten): A fellow student & friend who consistently helps me to troubleshoot when needed, and be my rubber duck.
+- [Mats Simonsson](https://github.com/Pelikantapeten): A fellow student & friend who consistently helps me to troubleshoot when needed, support me constantly, and be my rubber duck.
 - [Martina Terlevic](https://github.com/SephTheOverwitch): A constant support system, providing reassurance, and the ability to calm me down.
 - “I think therefore I blog” walkthrough: Provided the initial steps for setting up & deploying the site, as well as this, I also used the instructions they provided in order to implement a django blog into my app, following the walkthrough once again step-by-step. This also includes some formatting for the way each blog post is displayed on the blog page. Credits have been added as comments where code was used.
 - "I think therefore I blog" + "Hello Django" + Slack + Stackoverflow + a fellow [student](https://github.com/cornishcoder1): aided in the creation of the CRUD functions.
 - Sean from Tutor Support: Singling out the most recent blog post with an "IF statement".
-- Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database resolved this.
+- Ger from Tutor support: assistance deciphering an error I could not understand. Re-linking the Heroku database in the env.py file with the new value resolved this.
 - Ger from Tutor support: limiting view sections to a single user.
 - ['Simple is Better Than Complex'](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html): creating types of user groups.
 - [Bootstrap](https://getbootstrap.com/docs/5.2/components/dropdowns/): dropdown nav menu.
