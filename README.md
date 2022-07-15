@@ -278,6 +278,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - Another side effect of this, is that when the print was then approved via the admin panel, should the admin not pay attention and approve it without inserting a slug, the entire prints page would then fail to load.
  - To resolve this, the slug field was added to the form field.
  - Have not yet figured out to have this auto-populate as it would were it submitted directly from the admin panel.
+ - However, adding the slug field ensures that the "Create" feature of CRUD now works as intended.
 
 11. Blog post page pushes social links to left:
  - Upon inspection in dev tools, the row containing the comments was being duplicated, causing the layout to shift.
@@ -285,12 +286,20 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - This then caused an issue with the view when the user was logged out.
  - Once more, the opening & closing if statements needed to be moved outside the row entirely.
 
-12. Forms test failed to run:
+12. Submit multiple comments:
+- Due to how the comments section was set up in the html file, upon submission of a comment, regardless of approval, the form would no longer be available to the user. Instead, a display message was constantly shown, suggesting that the comment was still pending approval, even if it had been approved.
+- To resolve this, the section in the HTML was removed, and instead a line was added to the view function so that a success message would display on the screen after submission. This then allows the user to go and submit multiple comments on the same post, regardless of whether they have an approved or pending comment already submitted.
+
+13. Testing CRUD functionality:
+ - Each of the features were tested multiple times to ensure that numerous new posts could be submitted, and that each post had the ability to be updated and edited by the user that submitted it.
+ - If a post is submitted by another user, the edit/delete buttons do not appear on the page.
+
+14. Forms test failed to run:
  - When running the newly created test in forms.py, the following error occurred in the terminal: "Got an error creating the test database: permission denied to create database".
  - A [Slack comment](https://code-institute-room.slack.com/archives/C026PTF46F5/p1647428298841409?thread_ts=1647427231.501879&cid=C026PTF46F5) provided the answer for this, & suggested that the new DATABASES variable in the settings.py file needed to be commented out, and the original one to be made active again for the tests to work.
  - Following this steps allowed the test to perform as expected.
 
-13. AssertionError: 301 != 200:
+15. AssertionError: 301 != 200:
  - The second test implemented from the "Hello Django" project failed each time it was ran.
  - The answer on how to resolve it was ascertained from [Stackoverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301), and adding an ```follow=True``` to the code in turn caused the tests to pass.
 
