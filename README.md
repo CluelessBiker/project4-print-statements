@@ -279,11 +279,16 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - To resolve this, the slug field was added to the form field.
  - Have not yet figured out to have this auto-populate as it would were it submitted directly from the admin panel.
 
- 11. Blog post page pushes social links to left:
-  - Upon inspection in dev tools, the row containtint the comments was being duplicated, causing the layout to shift.
-  - Issue resolved by moving the ```{% endif %}``` inside of the closing div for the row.
-  - This then caused an issue with the view when the user was logged out.
-  - Once more, the opening & closing if statements needed to be moved outside the row entirely.
+11. Blog post page pushes social links to left:
+ - Upon inspection in dev tools, the row containtint the comments was being duplicated, causing the layout to shift.
+ - Issue resolved by moving the ```{% endif %}``` inside of the closing div for the row.
+ - This then caused an issue with the view when the user was logged out.
+ - Once more, the opening & closing if statements needed to be moved outside the row entirely.
+
+12. Forms test failed to run:
+ - When running the newly created test in forms.py, the following error occurred in the terminal: "Got an error creating the test database: permission denied to create database".
+ - A [Slack comment](https://code-institute-room.slack.com/archives/C026PTF46F5/p1647428298841409?thread_ts=1647427231.501879&cid=C026PTF46F5) provided the answer for this, & suggested that the new DATABASES variable in the settings.py file needed to be commented out, and the original one to be made active again for the tests to work.
+ - Following this steps allowed the test to perform as expected.
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
@@ -392,6 +397,7 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 - [Stackoverflow](https://stackoverflow.com/questions/23956288/django-all-auth-email-required): Allauth email sign up required.
 - [Slack thread](https://code-institute-room.slack.com/archives/C7EJUQT2N/p1642336796215800?thread_ts=1642316166.200400&cid=C7EJUQT2N): Assistance with function to submit new prints.
 - [Ordinary Coders](https://ordinarycoders.com/blog/article/django-messages-framework): implementing bootstrap messages in django.
+- "Hello Django": The two tests implemented in this project were reused from the walkthrough project.
 
 ### Media
 - All photography displayed in the Artists gallery was created by me.
