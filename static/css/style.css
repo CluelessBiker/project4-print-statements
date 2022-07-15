@@ -152,6 +152,14 @@ h3 {
     margin: 3px 0;
 }
 
+.all-prints-cards a:hover {
+    text-decoration: none;
+}
+
+.all-prints-cards h2:hover {
+    color: #EFB542;
+}
+
 /* NEW SUBMISSION BOX */
 .new-submission {
     justify-content: center;
@@ -238,7 +246,7 @@ h3 {
 
 .single-blog-post h1{
     margin: 40px auto;
-    color: #EFB542;
+    color: #1A313C;
     font-size: 3em;
     text-transform: uppercase;
 }
@@ -248,9 +256,13 @@ h3 {
     text-transform: uppercase;
 }
 
+.single-blog-author h2 {
+    font-size: 1.5em;
+}
+
 .single-blog-bodytext {
     font-family: 'Kanit', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     letter-spacing: 2px;
     padding: 20px;
 }
@@ -273,12 +285,19 @@ h3 {
     color: #2B1633;
 }
 
+/* BLOG POST COMMENTS */
 .single-post-comments {
     margin: 20px auto;
 }
 
 .single-post-comments h3 {
     margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.single-post-comments p {
+    font-size: 1.2em;
+    letter-spacing: 2px;
 }
 
 /* LOGIN - LOGOUT - REGISTER */
