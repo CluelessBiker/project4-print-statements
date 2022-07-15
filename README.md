@@ -280,7 +280,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - Have not yet figured out to have this auto-populate as it would were it submitted directly from the admin panel.
 
 11. Blog post page pushes social links to left:
- - Upon inspection in dev tools, the row containtint the comments was being duplicated, causing the layout to shift.
+ - Upon inspection in dev tools, the row containing the comments was being duplicated, causing the layout to shift.
  - Issue resolved by moving the ```{% endif %}``` inside of the closing div for the row.
  - This then caused an issue with the view when the user was logged out.
  - Once more, the opening & closing if statements needed to be moved outside the row entirely.
@@ -289,6 +289,10 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - When running the newly created test in forms.py, the following error occurred in the terminal: "Got an error creating the test database: permission denied to create database".
  - A [Slack comment](https://code-institute-room.slack.com/archives/C026PTF46F5/p1647428298841409?thread_ts=1647427231.501879&cid=C026PTF46F5) provided the answer for this, & suggested that the new DATABASES variable in the settings.py file needed to be commented out, and the original one to be made active again for the tests to work.
  - Following this steps allowed the test to perform as expected.
+
+13. AssertionError: 301 != 200:
+ - The second test implemented from the "Hello Django" project failed each time it was ran.
+ - The answer on how to resolve it was ascertained from [Stackoverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301), and adding an ```follow=True``` to the code in turn caused the tests to pass.
 
 ### Validator Testing
 - html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
