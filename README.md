@@ -3,7 +3,7 @@ Print statements is a safe haven that brings artists & consumers together in har
 
 ![Site view across devices](static/images-readme/readme-amiresponsive.png)
 
-The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
+The live link for "print(STATEMENTS)" can be found [HERE](https://project4-print-statements.onrender.com/)
 
 ## Table of Contents
 + [UX](#ux "UX")
@@ -38,7 +38,7 @@ The live link for "print(STATEMENTS)" can be found [HERE](https://print-statemen
 ## UX
 
 ### Site Purpose:
-The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”](https://print-statements.herokuapp.com/) Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the price, and number of limited edition copies they would like to sell. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
+The intent of the site is to bring Artists & Consumers together. [“print(STATEMENTS)”](https://project4-print-statements.onrender.com/) Is an online printing service where known & aspiring artists can submit their work. In doing so, they will also select the medium in which they would like their work to be printed, along with the price, and number of limited edition copies they would like to sell. Upon doing so, the artwork will then be displayed on the site, available to the general public for purchase. Each unique piece of artwork will be signed & numbered, and issued with a statement of authenticity, so that enthusiastic collectors can own a piece of their favourite artist.
 
 ### Site Goal:
 To build a platform that allows artists to easily share their work and passions with their fans, and art lovers who have yet to discover their talents. As well as to bring an engaging experience to artists and consumers alike. By having a display of artwork from a range of individuals, art-lovers will be able to easily peruse through pieces that engage them in a way that only art can.
@@ -392,7 +392,8 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 - connected my github account to Heroku through the Deploy tab
 - connected my github project repository, and then clicked on the "Deploy" button
 
-- The live link for "print(STATEMENTS)" can be found [HERE](https://print-statements.herokuapp.com/)
+* Due to Heroku revoking their frie tier access, the project has been redeployed using (Render)[https://render.com/] & (ElephantSQL)[https://www.elephantsql.com/] using the following [instructions](https://code-institute-students.github.io/deployment-docs/30-pp4/)
+- The live link for "print(STATEMENTS)" can be found [HERE](https://project4-print-statements.onrender.com/)
 
 ## Credits
 
