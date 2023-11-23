@@ -197,7 +197,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 
 ![Social Links](static/images-readme/readme-sociallinks.png)
 
-### C.R.U.D:
+### Who gives a C.R.U.D:
 
 #### Create (button):
 - The button to invite you to submit a new artwork will be found on the **"Prints"** page.
