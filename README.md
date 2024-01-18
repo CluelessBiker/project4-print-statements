@@ -223,6 +223,84 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 - Social media sign-in
 
 ## Testing
+
+### Validator Testing
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| printstatements - settings.py | PEP8 validator | [No issues found](static/images-readme/readme-pep8.png) | ✅ |
+| printstatements - urls.py | PEP8 validator | No issues found | ✅ |
+| blog app - forms.py | PEP8 validator | No issues found | ✅ |
+| blog app - models.py | PEP8 validator | No issues found | ✅ |
+| blog app - views.py | PEP8 validator | No issues found | ✅ |
+| blog app - urls.py | PEP8 validator | No issues found | ✅ |
+| blog app - admin.py | PEP8 validator | No issues found | ✅ |
+| artprint app - forms.py | PEP8 validator | No issues found | ✅ |
+| artprint app - models.py | PEP8 validator | No issues found | ✅ |
+| artprint app - views.py | PEP8 validator | No issues found | ✅ |
+| artprint app - urls.py | PEP8 validator | No issues found | ✅ |
+| artprint app - admin.py | PEP8 validator | No issues found | ✅ |
+| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](static/images-readme/readme-w3c-css.png) | ✅ |
+| Home page - html | [W3C](https://validator.w3.org/) validator - source code | No issues found | ✅ |
+| About page - html | W3C validator - source code | No issues found | ✅ |
+| Blog page - html | W3C validator - source code | No issues found | ✅ |
+| Prints page - html | W3C validator - source code | No issues found | ✅ |
+| Sign-in page - html | W3C validator - source code | No issues found | ✅ |
+| Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
+| About page - html | lighthouse | Acceptable scores | ✅ |
+| Blog page - html | lighthouse | Acceptable scores | ✅ |
+| Prints page - html | lighthouse | Acceptable scores | ✅ |
+| Sign-in page - html | lighthouse | Acceptable scores | ✅ |
+| Brave browser | Launch site | Site opens without issue | ✅ |
+| Chrome browser | Launch site | Site opens without issue | ✅ |
+| Safari browser | Launch site | Site opens without issue | ✅ |
+
+### Responsiveness testing
+
+| **TEST**                      | **ACTION**              | **EXPECTATION**             | **RESULT** |
+| ----------------------------- | ----------------------- | --------------------------- | ---------- |
+| Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Home page - responsiveness    | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| About page - responsiveness   | Size site down to 320px | all elements stay on screen | ✅         |
+| About page - responsiveness   | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| Prints page - responsiveness  | Size site down to 320px | all elements stay on screen | ✅         |
+| Prints page - responsiveness  | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| Blog page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
+| Blog page - responsiveness    | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| Sign-in page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
+| Sign-in page - responsiveness | Size site up to 1920ox  | all elements stay on screen | ✅         |
+
+### C.R.U.D. testing
+
+| **TEST**          | **ACTION**             | **EXPECTATION**          | **RESULT** |
+| ----------------- | ---------------------- | ------------------------ | ---------- |
+| Blog - Create     | Add new instance to DB | Instance created         | ✅         |
+| Blog - Read       | Retrieve all instances | Instances visible in UI  | ✅         |
+| Blog - Update     | Modify an instance     | Mods saved & visible     | ✅         |
+| Blog - Delete     | Delete an instance     | Instance removed from UI | ✅         |
+| Comments - Create | Add new instance to DB | Instance created         | ✅         |
+| Comments - Read   | Retrieve all instances | Instances visible in UI  | ✅         |
+| Artprint - Create | Add new instance to DB | Instance created         | ✅         |
+| Artprint - Read   | Retrieve all instances | Instances visible in UI  | ✅         |
+| Artprint - Update | Modify an instance     | Mods saved & visible     | ✅         |
+| Artprint - Delete | Delete an instance     | Instance removed from UI | ✅         |
+| Like - Create | Add new instance to DB | Instance created         | ✅         |
+| Like - Delete | Delete an instance     | Instance removed from UI | ✅         |
+
+### FEATURES
+
+| **TEST**                      | **ACTION**             | **EXPECTATION**                                           | **RESULT** |
+| ----------------------------- | ---------------------- | --------------------------------------------------------- | ---------- |
+| Navigation bar                | Click on nav link      | user routed to correct page                               | ✅         |
+| Footer links                  | Click on footer links  | user routed to new browser tab                            | ✅         |
+| Like button                   | Click "like"           | Post liked/unliked accordingly                            | ✅         |
+| Edit button                   | Click edit button      | user navigated to edit screen                             | ✅         |
+| Delete button                 | Click delete button    | print/blog removed from UI                                | ✅         |
+| Internal links                | Click link             | User routed to appropriate page                           | ✅         |
+| Login                         | User logs in           | UI updates & user is logged in                            | ✅         |
+| Sign up                       | User signs up          | new account created for the user                          | ✅         |
+| Logout                        | User clicks logout     | UI updates, user is logged out, user cannot create a post | ✅         |
+
+### BUG TESTING:
 1. index.html page not loading:
  - Through trial and error, I changed the view code from a class to a function.
  - as well as removed the ```.as_view()``` from the URL path.
@@ -304,30 +382,8 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
  - The second test implemented from the "Hello Django" project failed each time it was ran.
  - The answer on how to resolve it was ascertained from [Stackoverflow](https://stackoverflow.com/questions/21215035/django-test-always-returning-301), and adding an ```follow=True``` to the code in turn caused the tests to pass.
 
-### Validator Testing
-- html files pass through the [W3C validator](https://validator.w3.org/) with no html issues found
-- Errors listed only reference {%%} & {{}} tags.
-
-- CSS files pass through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues found.
-
-![Jigsaw validator message](static/images-readme/readme-w3c-css.png)
-<!-- 
-- JS files pass through [JSHint](https://jshint.com/) with no issues found.
-
-![JSHint overview]() -->
-
-- page has an excellent Accessibility rating in Lighthouse
-
-![Accessibility score](static/images-readme/readme-lighthouse.png)
-
-- Python files passed through [PEP8 Online](http://pep8online.com/) with no issues found.
-
-![PEP8 message](static/images-readme/readme-pep8.png)
-
-- Tested the site opens in Brave, Chrome & Safari without issues.
-- All social links open to external pages as intended.
-
 ### Unfixed Bugs
+- None that I'm aware of
 
 ## Technologies Used
 ### Main Languages Used
